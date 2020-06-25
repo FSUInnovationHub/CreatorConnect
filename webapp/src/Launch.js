@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import './CreatorConnect.css';
-import { BrowserRouter as Redirect } from 'react-router-dom';
-import { useHistory } from 'react-router-dom';
+
 
 
 
@@ -37,12 +36,7 @@ export default function MultipleSelect() {
   
   var rez; 
 
-  const history = useHistory();
 
-    const handleClick = () => {
-        history.push("/cards");
-    }
-  
   window.onload = function () {
     axiosWithCookies.get(`https://orlandokenny.pythonanywhere.com/login`)
     .then((response) => {
