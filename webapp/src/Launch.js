@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
 import './CreatorConnect.css';
 import { BrowserRouter as Redirect } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
+
+
 
 //*This is the Login Component that will prompt users to either sign up or login to CreatorConnect*/
 
@@ -33,6 +36,12 @@ export default function MultipleSelect() {
   });
   
   var rez; 
+
+  const history = useHistory();
+
+    const handleClick = () => {
+        history.push("/cards");
+    }
   
   window.onload = function () {
     axiosWithCookies.get(`https://orlandokenny.pythonanywhere.com/login`)
@@ -70,7 +79,7 @@ export default function MultipleSelect() {
 
   return isLoggedOut === 0 ? (
     <div>
-       {getUsername()}
+      {window.location.assign('https://creatorconnect.netlify.com/cards')}
     </div>
   )
   :
