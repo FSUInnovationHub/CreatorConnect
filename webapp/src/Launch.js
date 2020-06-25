@@ -79,7 +79,8 @@ export default function MultipleSelect() {
 
   return isLoggedOut === 0 ? (
     <div>
-      {window.location.assign('https://creatorconnect.netlify.com/cards')}
+      {(getUsername())}
+      {/*window.location.assign('https://creatorconnect.netlify.com/cards')*/}
     </div>
   )
   :
