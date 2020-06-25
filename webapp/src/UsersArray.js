@@ -1,5 +1,4 @@
 import React from 'react'
-import ReactDOM from 'react-dom';
 import './CreatorConnect.css';
 
 /*This class is used to fetch the users from the allRandUsers endpoint and throw back card elements*/

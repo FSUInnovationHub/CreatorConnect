@@ -1,9 +1,6 @@
 import React, { useState } from 'react'
-import ReactDOM from 'react-dom';
 import './CreatorConnect.css';
-import { Route, BrowserRouter as Router, Link, Redirect } from 'react-router-dom';
-import {render} from 'react-dom';
-import { bool } from 'prop-types';
+import { BrowserRouter as Redirect } from 'react-router-dom';
 
 //*This is the Login Component that will prompt users to either sign up or login to CreatorConnect*/
 
@@ -19,16 +16,12 @@ const STYLE = {
   }
 }
 
-/*declaration of the Launch class that will hold form data*/
-class Launch extends React.Component {}
-
 /*This function will be used to handle the form*/
 export default function MultipleSelect() {
   const existingUser = "Existing User? Click here"
   const newUser = "New User? Click Here"
   //react hooks are used in a rather unconventional manner here. Allows for uniform asynchrenous functionality later on
   const boolArray = [true, false]  
-  const numArray = [0]
   const [registration, hideRegistration] = useState(boolArray[0]);
   const [login, setLogin] = useState(boolArray[1]);
   const [button, setButton] = useState(existingUser);
@@ -58,7 +51,7 @@ export default function MultipleSelect() {
   function triggerRegistration() {hideRegistration(!registration)}
   function triggerLogin() {setLogin(!login)}
   function triggerButton() {
-    if(button == existingUser)
+    if(button === existingUser)
     {
       setButton(newUser)
     }

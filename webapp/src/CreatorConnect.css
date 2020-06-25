@@ -263,6 +263,7 @@ p {
 .name {
   margin-bottom:-1.389vw;
   margin-left: 2.431vw;
+  margin-right: 2.431vw;
   text-align: left;
   color: #5F2D38;
   font-size: 3.472vw;
@@ -620,7 +621,7 @@ padding-left:10vw !important;
 .name {
   margin-bottom:-1.389vw;
   margin-left: 2.431vw;
-  margin-right: 1vw;
+  margin-right: 2.431vw;
   text-align: left;
   color: #5F2D38;
   font-size: 7vw;
@@ -923,7 +924,7 @@ ul{
 {
   margin-bottom:-1.389vw;
   margin-left: 2.431vw;
-  margin-right: 1vw;
+  margin-right: 2.431vw;
   text-align: left;
   color: #5F2D38;
   font-size: 5vw;

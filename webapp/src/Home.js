@@ -1,11 +1,9 @@
 import React from 'react'
-import ReactDOM from 'react-dom';
 import UsersArray from './UsersArray';
 import './CreatorConnect.css';
 import { Redirect } from 'react-router-dom';
-import { booleanTypeAnnotation } from 'babel-types';
 import Modal from 'react-modal';
-import Switch from "react-switch";
+
 
 /*This is the Home component that will hold the logo and the search bar*/
 
@@ -183,7 +181,7 @@ class Home extends React.Component {
     }
     var searchResults = []
     var userText = []
-    for(var i = 0; i < window.count; i++)
+    for(i = 0; i < window.count; i++)
     {
       var div = document.getElementById("searchUsers" + i);
       userText.push(div.innerText)
@@ -204,7 +202,7 @@ class Home extends React.Component {
           div.style.display = "none";
         }
       }
-      for(var j = 0; j < searchResults.length; j++)
+      for(j = 0; j < searchResults.length; j++)
       {
         div.style.display = ""
       }
@@ -233,6 +231,7 @@ class Home extends React.Component {
   sptAfterOpenModal() {}
 
   sptCloseModal() {
+
     this.setState({sptModalIsOpen: false});
   }
 
@@ -283,6 +282,20 @@ class Home extends React.Component {
       5 = logged out
       any other int = an unkown internal server error*/
 
+      /* 
+      render() {
+        return this.state.data === 0 ? 
+        (
+          html
+        )
+        :
+        (
+          other html 
+        )
+      }
+
+
+      */
   render() {
     return this.state.data === 0 ?
     (
@@ -291,7 +304,46 @@ class Home extends React.Component {
         <form className="formWrap" action='http://localhost:5000/logout' method = 'POST' >
           <button className = "logout" type="submit">Logout</button>
         </form>
-          <button className = "logout" onClick={this.editOpenModal} type="submit">edit</button>
+          
+        <button className="leftNavBar" onClick={this.openModal}>&nbsp;ABOUT </button>
+        <Modal
+          isOpen={this.state.modalIsOpen}
+          onAfterOpen={this.afterOpenModal}
+          onRequestClose={this.closeModal}
+          contentLabel="Example Modal">
+          <div className="modalBtn">
+            <button onClick={this.closeModal}>close</button>
+          </div>
+          <h1 className="modalLogo"><span style={STYLE.SPAN}>C</span>reator<span style={STYLE.SPAN}>C</span>onnect<span style={STYLE.BETA}>BETA</span></h1>
+          <div className="modalText">
+            <p>
+              <span style={STYLE.SLI}>C</span><span style={STYLE.EMPH}>reator</span><span style={STYLE.SLI}>C</span><span style={STYLE.EMPH}>onnect</span>’s primary goal is to bridge the gap between skilled students and those who need assistance with developing their independent projects! <br></br>
+              <span style={STYLE.SLI}>R</span>ally with us here at The Innovation Hub as we encourage the expression of creativity and critical thinking! <br></br>
+              <span style={STYLE.SLI}>E</span><span style={STYLE.EMPH}>mpathize, Ideate, and Build</span> no matter what field you're in!<br></br>
+              <span style={STYLE.SLI}>A</span>dvance your skillset and expertise with our network of other Creators!<br></br>
+              <span style={STYLE.SLI}>T</span>ogether we'll network like never before!<br></br>
+              <span style={STYLE.SLI}>E</span>nroll in <span style={STYLE.EMPH}>C</span>reator<span style={STYLE.EMPH}>C</span>onnect today!
+            </p>
+          </div>
+        </Modal>
+
+        <button className="leftNavBar" onClick={this.teamOpenModal}>&nbsp;TEAM </button>
+        <Modal
+          isOpen={this.state.teamModalIsOpen}
+          onAfterOpen={this.teamAfterOpenModal}
+          onRequestClose={this.teamCloseModal}
+          contentLabel="Example Modal">
+          <div className="modalBtn">
+            <button onClick={this.teamCloseModal}>close</button>
+          </div>
+
+          <h1 className="modalLogo"><span style={STYLE.EMPH}>M</span>eet&nbsp;&nbsp;the<span style={STYLE.EMPH}>&nbsp;&nbsp;T</span>eam</h1>
+          <div className="teamBlurbContainer">
+            <img img src="/images/teamImage.png" className="teamPics" alt="team"></img>
+          </div>
+        </Modal>
+
+        <button className = "leftNavBar" onClick={this.editOpenModal} type="submit">edit</button>
           <Modal
           isOpen={this.state.editModalIsOpen}
           onAfterOpen={this.editAfterOpenModal}
@@ -470,63 +522,10 @@ class Home extends React.Component {
         
           </div>
           </Modal>
-        <button className="leftNavBar about" onClick={this.openModal}>&nbsp;ABOUT </button>
-        <Modal
-          isOpen={this.state.modalIsOpen}
-          onAfterOpen={this.afterOpenModal}
-          onRequestClose={this.closeModal}
-          contentLabel="Example Modal">
-          <div className="modalBtn">
-            <button onClick={this.closeModal}>close</button>
-          </div>
-          <h1 className="modalLogo"><span style={STYLE.SPAN}>C</span>reator<span style={STYLE.SPAN}>C</span>onnect<span style={STYLE.BETA}>BETA</span></h1>
-          <div className="modalText">
-            <p>
-              <span style={STYLE.SLI}>C</span><span style={STYLE.EMPH}>reator</span><span style={STYLE.SLI}>C</span><span style={STYLE.EMPH}>onnect</span>’s primary goal is to bridge the gap between skilled students and those who need assistance with developing their independent projects! <br></br>
-              <span style={STYLE.SLI}>R</span>ally with us here at The Innovation Hub as we encourage the expression of creativity and critical thinking! <br></br>
-              <span style={STYLE.SLI}>E</span><span style={STYLE.EMPH}>mpathize, Ideate, and Build</span> no matter what field you're in!<br></br>
-              <span style={STYLE.SLI}>A</span>dvance your skillset and expertise with our network of other Creators!<br></br>
-              <span style={STYLE.SLI}>T</span>ogether we'll network like never before!<br></br>
-              <span style={STYLE.SLI}>E</span>nroll in <span style={STYLE.EMPH}>C</span>reator<span style={STYLE.EMPH}>C</span>onnect today!
-            </p>
-          </div>
-        </Modal>
 
-        <button className="leftNavBar " onClick={this.teamOpenModal}>&nbsp;TEAM </button>
-        <Modal
-          isOpen={this.state.teamModalIsOpen}
-          onAfterOpen={this.teamAfterOpenModal}
-          onRequestClose={this.teamCloseModal}
-          contentLabel="Example Modal">
-          <div className="modalBtn">
-            <button onClick={this.teamCloseModal}>close</button>
-          </div>
+        
 
-          <h1 className="modalLogo"><span style={STYLE.EMPH}>M</span>eet&nbsp;&nbsp;the<span style={STYLE.EMPH}>&nbsp;&nbsp;T</span>eam</h1>
-          <div className="teamBlurbContainer">
-            <img img src="/images/teamImage.png" className="teamPics"></img>
-          </div>
-        </Modal>
-
-        <button className="leftNavBar wnext" onClick={this.ftrOpenModal}>&nbsp;WHAT'S NEXT </button>
-        <Modal
-          isOpen={this.state.ftrModalIsOpen}
-          onAfterOpen={this.ftrAfterOpenModal}
-          onRequestClose={this.ftrCloseModal}
-          contentLabel="Example Modal">
-          <div className="modalBtn">
-            <button onClick={this.ftrCloseModal}>close</button>
-          </div>
-          <h1 className="modalLogo"><span style={STYLE.EMPH}>W</span>hat's&nbsp;&nbsp;<span style={STYLE.EMPH}>N</span>ext?</h1>
-          <div className="modalText">
-            <p>
-              <br></br>
-              <span style={STYLE.SLI}>O</span>ver the next few months we will be developing a host of new features and interface updates.<br></br><br></br> <span style={STYLE.SLI}>W</span>e hope to hear from you about what features you'd like either through our feedback survey or by email at...<br></br><br></br> <span style={STYLE.SLI}>info@innovation.fsu.edu</span>
-            </p>
-          </div>
-        </Modal>
-
-        <a href="https://forms.gle/j19asMDP9VCjtQMDA" target="_blank"><button className="leftNavBar feedback">FEEDBACK</button></a>
+        <a href="https://forms.gle/j19asMDP9VCjtQMDA"><button className="leftNavBar">FEEDBACK</button></a>
       </div>
 
         <h2 className="textAboveSearch"><span style={STYLE.SPAN}>C</span>reator<span style={STYLE.SPAN}>C</span>onnect<span style={STYLE.BETA}>BETA</span></h2>

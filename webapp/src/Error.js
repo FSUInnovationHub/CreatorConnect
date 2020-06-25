@@ -1,6 +1,4 @@
 import React from 'react'
-import ReactDOM from 'react-dom';
-import { numberTypeAnnotation, isUserWhitespacable } from 'babel-types';
 import './CreatorConnect.css';
 import { Redirect, withRouter } from "react-router-dom";
 

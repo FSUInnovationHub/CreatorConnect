@@ -29,7 +29,7 @@ def createNewUser():
     global graduYear
     global skillsForChange
     document = request.form.to_dict()
-    name = (document['firstName'].lower()).capitalize() + ' ' + (document['lastName'].lower()).capitalize
+    name = (document['firstName'].lower()).capitalize() + ' ' + (document['lastName'].lower()).capitalize()
     emailEntered = document['fsuEmail'].lower()
     # TODO: Add verification for fsu.edu email // also email existence module 
 
