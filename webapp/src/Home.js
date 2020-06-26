@@ -113,7 +113,7 @@ class Home extends React.Component {
         userSkills: response.data.data.skills
       })
     }).catch((error) => {
-        alert("There was an error connecting to the api")
+        
         console.error(error);
     });
   }
