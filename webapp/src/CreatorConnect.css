@@ -812,7 +812,7 @@ ul{
 /*Input for search bar styling*/
 #btnContainer {
   display: flex; /* or inline-flex */
-  margin-left: 40px;
+  margin-left: 50px;
   text-align: left;
   align-content: center;
   font-family: bebas-neue-by-fontfabric, sans-serif;
