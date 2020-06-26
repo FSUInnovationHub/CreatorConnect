@@ -1072,8 +1072,8 @@ ul{
 /*Button inside modal*/
 .modalBtn button
 {
-  width: 10vw;
-  height: 5vh;
+  width: 12vw;
+  height: 6vh;
   padding: .25vw;
   border-radius: .5vw;
   font-size: 4vw;
@@ -1123,6 +1123,89 @@ ul{
   max-width:100%;
   max-height:100%;
 }
+
+/*change info modal*/
+.editModal {
+  margin-left: 0vw;
+}
+
+.signUpOrIn2
+{
+  background-color: #EAE3D1;
+  width: 525px;
+  height: 900px;
+  margin-left: 0vw;
+  margin-top: 5vh;
+  margin: 0 auto;
+  border-radius: 0.694vw;
+  flex: auto;
+  padding-bottom: 5vh;
+}
+
+/*centers the form*/
+.information
+{
+  width: 250px;
+  min-height: 60vh;
+  margin-left: 0px;
+  margin-top: 0vw;
+}
+
+/*Input boxes for sign up page*/
+.inputBox2{
+  margin-left: 40px !important;
+  margin-top: 25px !important;
+  margin-bottom: 2vh;
+  width: 20vw;
+  height: 5vh;
+}
+
+/*END OF MEDIA */
+
+/*Button inside modal*/
+.filterBtn button
+{
+  width: 90px;
+  margin-right: 0px;
+  padding: .25vw;
+  border-radius: .5vw;
+  font-size: 25px;
+  color: #5F2D38;
+  font-family: bebas-neue-by-fontfabric, sans-serif;
+  background-color: #EAE3D1;
+}
+
+/*Button inside modal*/
+.filterBtn button:hover
+{
+  width: 90px;
+  margin-right: 0px;
+  padding: .25vw;
+  border-radius: .5vw;
+  font-size: 25px;
+  color: #EAE3D1;
+  font-family: bebas-neue-by-fontfabric, sans-serif;
+  background-color: #5F2D38;
+}
+
+/*Input for search bar styling*/
+#btnContainer {
+  display: flex; /* or inline-flex */
+  margin-left: 160px;
+
+  text-align: left;
+  align-content: center;
+  font-family: bebas-neue-by-fontfabric, sans-serif;
+  width: 37%; /* Full-width */
+  font-size: 2.22vw; /* Increase font-size */
+  padding-top:  1.5vw; /* Add some padding */
+  border-radius: 0.694vw;
+}
+
+.informationWrap {
+  margin-left: 20px;
+}
+
 
 }
 
