@@ -822,6 +822,10 @@ ul{
   border-radius: 0.694vw;
 }
 
+.informationWrap {
+  margin-left: 20px;
+}
+
 }
 
 /*optimized for tablet screens*/

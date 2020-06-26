@@ -367,7 +367,7 @@ class Home extends React.Component {
             <div className = "CreatorConnectLogo">
             <h4 className="launchText"><span style={STYLE.SPAN}>C</span>reator<span style={STYLE.SPAN}>C</span>onnect<span style={STYLE.BETA}>BETA</span></h4>
 
-              <div className="informationWrap">
+             
               <div className = "information">
           <form action = 'https://orlandokenny.pythonanywhere.com/changeInfo' method = 'POST'>
                   <input required className="inputBox" type="text" name="firstName" placeholder="First Name" defaultValue={(this.state.userName.split(" "))[0]} ></input>
@@ -514,7 +514,6 @@ class Home extends React.Component {
                 </div>
                   <button className="inputBox2" type="submit">Submit</button>
                 </form>
-                </div>
                 </div>
                 </div>
                 </div>
