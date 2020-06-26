@@ -106,6 +106,7 @@ class Home extends React.Component {
         //connects to the login endpoint and reads the session cookie to see if the user is logged in to gain access to the cards page
     axiosWithCookies.get(`https://orlandokenny.pythonanywhere.com/changeInfo`)
     .then((response) => {
+      alert("note: if you are a brand new user and wish to edit your information/delete your account you must sign out and sign in again.")
       this.setState({
         userName: response.data.data.name,
         userEmail: response.data.data.email,
