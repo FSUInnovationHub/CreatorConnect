@@ -38,7 +38,7 @@ export default function MultipleSelect() {
 
 
   window.onload = function () {
-    axiosWithCookies.get(`https://orlandokenny.pythonanywhere.com/login`)
+    axiosWithCookies.get(`https://FSUinnovationHub.pythonanywhere.com/login`)
     .then((response) => {
       rez = parseInt(JSON.stringify(response.data))
       if(rez === 0)
@@ -65,7 +65,7 @@ export default function MultipleSelect() {
   }
 
   function getUsername() {
-    axiosWithCookies.get(`https://orlandokenny.pythonanywhere.com/username`)
+    axiosWithCookies.get(`https://FSUinnovationHub.pythonanywhere.com/username`)
     .then((response) => {
        alert("You're logged in as " + JSON.stringify(response.data))
       })
@@ -95,7 +95,7 @@ export default function MultipleSelect() {
               <div className = "information">
 
               {/*first form, the new user form*/}
-              {registration && <form action = 'https://orlandokenny.pythonanywhere.com/register' method = 'POST'>
+              {registration && <form action = 'https://FSUinnovationHub.pythonanywhere.com/register' method = 'POST'>
                   <input required className="inputBox" type="text" name="firstName" placeholder="First Name" ></input>
                 
                   <input required className="inputBox" type="text" name="lastName" placeholder="Last Name" ></input>
@@ -243,7 +243,7 @@ export default function MultipleSelect() {
                 </form>}
 
                 {/*second form, the existing user form*/}
-                {login && <form action = 'https://orlandokenny.pythonanywhere.com/login' method = 'POST'>
+                {login && <form action = 'https://FSUinnovationHub.pythonanywhere.com/login' method = 'POST'>
                     <input required className="inputBox" type="text" name="fsuEmail" placeholder="FSU E-mail"></input>
                   <input required className="inputBox" type="password" name="password" placeholder="Password"></input>
                   <button className="inputBox" type="submit">Log In</button>

@@ -83,7 +83,7 @@ class Home extends React.Component {
       withCredentials: true
     });
     //connects to the login endpoint and reads the session cookie to see if the user is logged in to gain access to the cards page
-    axiosWithCookies.get(`https://orlandokenny.pythonanywhere.com/login`)
+    axiosWithCookies.get(`https://FSUinnovationHub.pythonanywhere.com/login`)
         .then((response) => {
             this.setState({
                 data: parseInt(JSON.stringify(response.data))
@@ -93,7 +93,7 @@ class Home extends React.Component {
             console.error(error);
         });
     //connects to the usercount endpoint to get the user count displayed in the 
-    axios.get(`https://orlandokenny.pythonanywhere.com/userCount`)
+    axios.get(`https://FSUinnovationHub.pythonanywhere.com/userCount`)
         .then((response) => {
             this.setState({
                 totalUsers: parseInt(JSON.stringify(response.data.data))
@@ -104,7 +104,7 @@ class Home extends React.Component {
 
     
         //connects to the login endpoint and reads the session cookie to see if the user is logged in to gain access to the cards page
-    axiosWithCookies.get(`https://orlandokenny.pythonanywhere.com/changeInfo`)
+    axiosWithCookies.get(`https://FSUinnovationHub.pythonanywhere.com/changeInfo`)
     .then((response) => {
       alert("note: if you are a brand new user and wish to edit your information/delete your account you must sign out and sign in again.")
       this.setState({
@@ -302,7 +302,7 @@ class Home extends React.Component {
     (
       <div> {/* DO NOT REMOVE THIS DIV COMPONENT*/}
       <div class="topnav">
-        <form className="formWrap" action='https://orlandokenny.pythonanywhere.com/logout' method = 'POST' >
+        <form className="formWrap" action='https://FSUinnovationHub.pythonanywhere.com/logout' method = 'POST' >
           <button className = "logout" type="submit">Logout</button>
         </form>
           
@@ -356,7 +356,7 @@ class Home extends React.Component {
               var result = window.confirm("Are you sure you want to delete your account?")
               if(result === true)
               {
-                window.location = "https://orlandokenny.pythonanywhere.com/delete"
+                window.location = "https://FSUinnovationHub.pythonanywhere.com/delete"
               }
               else
               {
@@ -370,7 +370,7 @@ class Home extends React.Component {
 
              
               <div className = "information">
-          <form action = 'https://orlandokenny.pythonanywhere.com/changeInfo' method = 'POST'>
+          <form action = 'https://FSUinnovationHub.pythonanywhere.com/changeInfo' method = 'POST'>
                   <input required className="inputBox" type="text" name="firstName" placeholder="First Name" defaultValue={(this.state.userName.split(" "))[0]} ></input>
                 
                   <input required className="inputBox" type="text" name="lastName" placehodler="Last Name" defaultValue={(this.state.userName.split(" "))[1]} ></input>
