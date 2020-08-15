@@ -1,9 +1,5 @@
 import React, { useState } from 'react'
 import './CreatorConnect.css';
-
-
-
-
 //*This is the Login Component that will prompt users to either sign up or login to CreatorConnect*/
 
 //NOTE- YOUR HTML CODE NEEDS TO BE AT WRAPPED AROUND A DIV OBJECT.
@@ -64,16 +60,16 @@ export default function MultipleSelect() {
     }
   }
 
-  function getUsername() {
+    //unecessary
+  /*function getUsername() {
     axiosWithCookies.get(`https://FSUinnovationHub.pythonanywhere.com/username`)
     .then((response) => {
        alert("You're logged in as " + JSON.stringify(response.data))
       })
-  }
+}*/
 
   return isLoggedOut === 0 ? (
     <div>
-      {(getUsername())}
       {window.location.assign('https://creatorconnect.netlify.com/cards')}
     </div>
   )

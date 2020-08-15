@@ -1,5 +1,3 @@
-
-
 import connect
 import sys
 import json
