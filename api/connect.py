@@ -1,0 +1,1 @@
+CONNECTION_STRING = "mongodb://oak18b:panama@cluster0-shard-00-00-q86na.mongodb.net:27017,cluster0-shard-00-01-q86na.mongodb.net:27017,cluster0-shard-00-02-q86na.mongodb.net:27017/CreatorConnect?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority"
