@@ -52,8 +52,6 @@ def getResponseData(code):
 uri = connect.CONNECTION_STRING
 client = MongoClient(uri)
 
-
-
 # Init Flask App
 app = Flask(__name__)
 app.config['DEBUG'] = True
@@ -80,6 +78,7 @@ passwordForChange = ""
 graduYear = int
 skillsForChange = []
 
+#DATA
 @app.route('/')
 def index():
     return Response(200, {}).serialize()
@@ -89,37 +88,6 @@ def userCount():
     totalUsers = mongo.db.users.count()
     return Response(200, totalUsers).serialize()
 # /users
-
-@app.route('/users')
-def listUsers():
-    # Search for first 10 users and typecast to list
-    users = list(mongo.db.users.find({}).limit(10))
-
-    # Return new response object formatted with users
-    return Response(200, users).serialize()
-
-# /users
-@app.route('/users/page/<int:page>')
-def listUsersPagination(page):
-    # if less than 1
-    if page < 1:
-        return Response(400, {"error":"that's not gonna work"}).serialize()
-
-    # Search for first 10 users and typecast to list
-    users = list(mongo.db.users.find({}).skip((page-1)*9).limit(9))
-
-    # Return new response object formatted with users
-    return Response(200, users).serialize()
-
-# /allUsers
-@app.route('/allUsers')
-def listAllUsers():
-    # Search for all users and typecast to list
-    # NOTE- this is specifically used to test CSS/JS features with the frontend team.
-    users = list(mongo.db.users.find({}))
-
-    # Return new response object formatted with users
-    return Response(200, users).serialize()
 
 # /randUsers
 @app.route('/allRandUsers')
@@ -131,51 +99,8 @@ def listRandomUsers():
     # Return new response object formatted with users
     return Response(200, users).serialize()
 
-# /users/<count>
-@app.route('/users/<int:count>')
-def listUserCount(count):
-    users = list(mongo.db.users.find({}).limit(count))
-    return Response(200, users).serialize()
 
-# /getUser/<username>
-@app.route('/getUser/<string:username>')
-def searchByUsername(username):
-    # Returns user specified object
-    users = list(mongo.db.users.find({"fsu_id" : username}))
-
-    return Response(200, users).serialize()
-
-# /getByGradDate/<year>
-@app.route('/getByGradDate/<int:year>')
-def listByGradDate(year):
-    # Returns array of 3 users with specified grad date
-    users = list(mongo.db.users.find({"grad_date" : year}).limit(3))
-    return Response(200, users).serialize()
-
-# /getByGradDate/<year>/<count>
-@app.route('/getByGradDate/<int:year>/<int:count>')
-def chooseCountGradDate(year, count):
-    # Returns array of specified amount of users with specified grad date
-    users = list(mongo.db.users.find({"grad_date" : year}).limit(count))
-    return Response(200, users).serialize()
-
-@app.route('/projectsRand')
-def proyectos():
-    numProj = mongo.db.projects.count()
-    projectLst = list(mongo.db.projects.aggregate([ { "$sample": { "size": numProj } } ]))
-
-    # Return new response object formatted with users
-    return Response(200, projectLst).serialize()
-
-#search by project name
-
-@app.route('/getProjects/<string:projName>')
-def searchProjByProjname(projName):
-    # Returns user specified object
-    project = list(mongo.db.projects.find({"projTitle" : projName}))
-
-    return Response(200, project).serialize()
-
+#ACTIONS
 @app.route('/register', methods=['POST'])
 def createNewUser():
     global wrongPassword
@@ -336,57 +261,6 @@ def changeInfo():
     return redirect("https://creatorconnect.netlify.com/cards")
 #
       #})
-@app.route('/projects', methods=['GET', 'POST'])
-def home():
-  global person
-  global projTitle
-  global projDescrip
-  global projSkillsForChange
-  global projUrl
-  global projEmail
-
-  if request.method == 'GET':
-    return render_template('projects.html')
-  if request.method == 'POST':
-    document = request.form.to_dict()
-    projTitle = document['projectTitle']
-    projDescrip = document['name']
-
-    projSkillsForChange = [document['firstSkill'], document['secondSkill'], document['thirdSkill'], document['fourthSkill'], document['fifthSkill']]
-    projEmail = document['email']
-    projUrl = document['url']
-    mongo.db.projects.insert_one({'user who created':person, 'projTitle': projTitle, 'projDescrip':projDescrip, 'skills':projSkillsForChange, 'url':projUrl, 'email':projEmail})
-    return redirect("https://orlandokenny.pythonanywhere.com/projectsRand")
-
-@app.route('/myProjects/')
-def myProjects():
-  # Returns user specified object
-  projectsByUsers = list(mongo.db.projects.find({'user who created' : person}))
-
-  return Response(200, projectsByUsers).serialize()
-
-@app.route('/changeProjInfo')
-def changeProjInfo():
-  global projTitle
-  global projDescrip
-  global projSkillsForChange
-  global projUrl
-  global projEmail
-  document = request.form.to_dict()
-  ProjemailEntered = document['fsuEmail'].lower()
-  #search for email in DB
-  user = mongo.db.projects.find({'email': ProjemailEntered})
-  projTitle = user['projTitle']
-  projDescrip = user['projDescrip']
-  projSkillsForChange = user['skills']
-  projUrl = user['url']
-  projEmail = user['email']
-
-    #skillsArray = [document['firstSkill'], document['secondSkill'], document['thirdSkill'], document['fourthSkill'], document['fifthSkill']]
-  emailName = document['email']
-  urlLink = document['url']
-  mongo.db.projects.insert_one({'projTitle': projTitle, 'projDescrip':projDescrip}) #'skills':skillsArray, 'url':urlLink, 'email':emailName})
-  return redirect("http://localhost:5000/projectsRand")
 
 @app.route('/username')
 def returnUsername():
