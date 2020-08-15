@@ -1,0 +1,6 @@
+pymongo==3.8.0
+pytest==5.2.2
+Flask_PyMongo==2.3.0
+Flask_Cors==3.0.8
+Flask==1.1.1
+requests-oauthlib==1.1.0
