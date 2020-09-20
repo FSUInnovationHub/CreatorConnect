@@ -136,12 +136,12 @@ def createNewUser():
         passwordForChange = user['hashedPassword']## need to go to hashed password later to really change
         graduYear = user['gradYear']
         skillsForChange = user['skills']
-        return redirect("https://creatorconnect.netlify.com/cards")
+        return redirect("http://localhost:3000/cards")
     else:
         wrongPassword = False
         nonexistentUser = False
         existentUser = True
-        return redirect("https://creatorconnect.netlify.com/cards")
+        return redirect("http://localhost:3000/cards")
 
 @app.route('/login', methods=['POST', 'GET'])
 def login():
@@ -166,7 +166,7 @@ def login():
         wrongPassword = False
         nonexistentUser = True
         existentUser = False
-        return redirect("https://creatorconnect.netlify.com/cards")
+        return redirect("http://localhost:3000/cards")
     else:
         if (bcrypt.checkpw(passwordEntered.encode('utf8'), user['hashedPassword'])):
             wrongPassword = False
@@ -178,12 +178,12 @@ def login():
             passwordForChange = user['hashedPassword']## need to go to hashed password later to really change
             graduYear = user['gradYear']
             skillsForChange = user['skills']
-            return redirect("https://creatorconnect.netlify.com/cards")
+            return redirect("http://localhost:3000/cards")
         else:
             wrongPassword = True
             nonexistentUser = False
             existentUser = False
-            return redirect("https://creatorconnect.netlify.com/cards")
+            return redirect("http://localhost:3000/cards")
   elif request.method == 'GET':
     if 'username' in session:
       return "0"
@@ -215,7 +215,7 @@ def login():
 @app.route('/logout', methods=['POST'])
 def logout():
   session.pop('username')
-  return redirect("https://creatorconnect.netlify.com/")
+  return redirect("http://localhost:3000/")
 
 #experimental endpoint to avoid sending logged in users to the launch page
 @app.route('/isLoggedIn', methods=['GET'])
@@ -230,7 +230,7 @@ def delete():
   if request.method == 'GET':
     mongo.db.users.delete_one({'name': person})
     session.pop('username')
-    return redirect("https://creatorconnect.netlify.com/")
+    return redirect("http://localhost:3000/")
 
 @app.route('/changeInfo', methods = ['POST', 'GET'])
 def changeInfo():
@@ -256,7 +256,7 @@ def changeInfo():
     skillsForChange = user['skills']
 
 
-    return redirect("https://creatorconnect.netlify.com/cards")
+    return redirect("http://localhost:3000/cards")
 #
       #})
 

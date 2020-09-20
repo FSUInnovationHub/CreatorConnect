@@ -30,14 +30,17 @@ export default function MultipleSelect() {
     withCredentials: true
   });
   
-  var rez; 
+/*Trigger buttons that use hooks to either show or hide the login/signup option*/
+  function triggerRegistration() {hideRegistration(!registration)}
+  function triggerLogin() {setLogin(!login)}
+  function triggerButton() {if(button === existingUser){setButton(newUser)}else{setButton(existingUser)}}
+
 
 
   window.onload = function () {
-    axiosWithCookies.get(`https://FSUinnovationHub.pythonanywhere.com/login`)
+    axiosWithCookies.get(`http://localhost:5000/login`)
     .then((response) => {
-      rez = parseInt(JSON.stringify(response.data))
-      if(rez === 0)
+      if(parseInt(JSON.stringify(response.data)) === 0)
       {
         checkLogin(
           isLoggedOut + 1
@@ -46,37 +49,18 @@ export default function MultipleSelect() {
       })
   }
   
-  /*Trigger buttons that use hooks to either show or hide the login/signup option*/
-  function triggerRegistration() {hideRegistration(!registration)}
-  function triggerLogin() {setLogin(!login)}
-  function triggerButton() {
-    if(button === existingUser)
-    {
-      setButton(newUser)
-    }
-    else
-    {
-      setButton(existingUser)
-    }
-  }
-
-    //unecessary
-  /*function getUsername() {
-    axiosWithCookies.get(`https://FSUinnovationHub.pythonanywhere.com/username`)
-    .then((response) => {
-       alert("You're logged in as " + JSON.stringify(response.data))
-      })
-}*/
 
   return isLoggedOut === 0 ? (
     <div>
-      {window.location.assign('https://creatorconnect.netlify.com/cards')}
+      {alert(isLoggedOut)}
+      {window.location.assign('http://localhost:3000/cards')}
     </div>
   )
   :
   (
     //TO DO: ADD HOVERS
-    <div>
+    <div className="contentWrapper">
+      {alert(isLoggedOut)}
       <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/bootstrap-select.min.js"></script>
       <div className ="bothDivs">
         <div className = "leftDiv">
@@ -87,17 +71,17 @@ export default function MultipleSelect() {
             <div className = "CreatorConnectLogo">
             <h4 className="launchText"><span style={STYLE.SPAN}>C</span>reator<span style={STYLE.SPAN}>C</span>onnect<span style={STYLE.BETA}>BETA</span></h4>
 
-              <div className="informationWrap">
+              <div className="wrapper">
               <div className = "information">
 
               {/*first form, the new user form*/}
-              {registration && <form action = 'https://FSUinnovationHub.pythonanywhere.com/register' method = 'POST'>
+              {registration && <form action = 'http://localhost:5000/register' method = 'POST'>
                   <input required className="inputBox" type="text" name="firstName" placeholder="First Name" ></input>
-                
+                  <br></br>
                   <input required className="inputBox" type="text" name="lastName" placeholder="Last Name" ></input>
-                
+                    <br></br> 
                   <input required className="inputBox" type="email" name="fsuEmail" placeholder="FSU E-mail (lowercase)" pattern=".+@.+.fsu.edu"></input>
-             
+                  <br></br>
                   <input required className="inputBox" type="password" name="password" placeholder="Password" ></input>
                 
                   {/*VERIFY PASSWORD INPUT BOX... WILL BE LEFT OUT FOR BETA AND FOCUS GROUP RELEASE*/}
@@ -239,7 +223,7 @@ export default function MultipleSelect() {
                 </form>}
 
                 {/*second form, the existing user form*/}
-                {login && <form action = 'https://FSUinnovationHub.pythonanywhere.com/login' method = 'POST'>
+                {login && <form action = 'http://localhost:5000/login' method = 'POST'>
                     <input required className="inputBox" type="text" name="fsuEmail" placeholder="FSU E-mail"></input>
                   <input required className="inputBox" type="password" name="password" placeholder="Password"></input>
                   <button className="inputBox" type="submit">Log In</button>

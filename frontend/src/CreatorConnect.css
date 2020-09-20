@@ -20,15 +20,18 @@ body {
 }
 
 .tooltip .tooltiptext {
-  font-size: 30px;
+  font-size: 25px;
   visibility: hidden;
+  
   width: auto;
   background-color: #EAE3D1;
   color: #5F2D38;
   text-align: left;
+  border-radius: .5vw;
   border-style: solid;
   border-color: #5F2D38;
-  
+  padding: 10px;
+  margin-left: 10px;
   /* Position the tooltip */
   position: absolute;
   
@@ -41,9 +44,12 @@ body {
 /*Header used in cards*/
 h1 {
   background-size: cover;
+  margin-top: 1.875vw;
+  margin-bottom: 0vw;
   font-family: bebas-neue-by-fontfabric, sans-serif;
   font-weight: 400;
   font-style: normal;
+  font-size: 6.944vw;
   color:#5F2D38;/*#EAE3D1;*/
   text-align: center;
 }
@@ -51,9 +57,12 @@ h1 {
 /*Header used in top logo*/
 h2 {
   background-size: cover;
+  margin-top: 1.875vw;
+  margin-bottom: 5vw;
   font-family: bebas-neue-by-fontfabric, sans-serif;
   font-weight: 400;
   font-style: normal;
+  font-size: 6.944vw;
   color: #EAE3D1;
   text-align: center;
 }
@@ -61,11 +70,12 @@ h2 {
 /*Header used elsewhere, has different margin settings than h2*/
 h3 {
   background-size: cover;
-  margin-top: 0;
-  margin-bottom: 0;
+  margin-top: 0vh;
+  margin-bottom: 0vh;
   font-family: bebas-neue-by-fontfabric, sans-serif;
   font-weight: 400;
   font-style: normal;
+  font-size: 6.944vw;
   color: #EAE3D1;
   text-align: center;
 }
@@ -73,31 +83,35 @@ h3 {
 /*Sign Up/Sign In box Text*/
 h4
 {
-  padding-top: 30px;
+  padding-top: 3vh;
   background-size: cover;
+  margin-bottom: 0vw;
   font-family: bebas-neue-by-fontfabric, sans-serif;
   font-weight: 400;
   font-style: normal;
+  font-size: 5vw;
   color:#5F2D38;
   text-align: center;
-  margin-top: 20px;
+  margin-top: 2vh;
 }
 
 /*The text used above the search bar*/
 .textAboveSearch
 {
   background-size: cover;
-  margin-top: 10px;
+  margin-top: 10vh;
   font-family: bebas-neue-by-fontfabric, sans-serif;
   font-weight: 400;
   font-style: normal;
+  font-size: 80px;
   color: #EAE3D1;
   text-align: center;
-  margin-bottom: 1px;
+  margin-bottom: .1vh;
 }
 
 .editModal {
-  
+  width: 500px;
+   margin: 0 auto;
 }
 /*CreatorConnect logo on the pop up modals*/
 .modalLogo
@@ -107,6 +121,7 @@ h4
   font-family: bebas-neue-by-fontfabric, sans-serif;
   font-weight: 400;
   font-style: normal;
+  font-size: 6.2vw;
   color: #5F2D38;
   text-align: center;
   padding: 0;
@@ -117,11 +132,14 @@ h4
 .modalText
 {
   margin: 0vh;
-  height: 490px;
+  margin-left: 16vw;
+  width: 60vw;
+  height: 50vh;
 }
 
 /*Text inside of modals*/
 .modalText p {
+  font-size: 2.2vw;
   padding: 0;
   margin: 0;
 }
@@ -130,6 +148,10 @@ h4
 /*Button inside modal*/
 .modalBtn button
 {
+  width: 7vw;
+  padding: .25vw;
+  border-radius: .5vw;
+  font-size: 2vw;
   color: #EAE3D1;
   font-family: bebas-neue-by-fontfabric, sans-serif;
   background-color: #5F2D38;
@@ -138,15 +160,25 @@ h4
 /*Input for search bar styling*/
 #btnContainer {
   display: flex; /* or inline-flex */
+  margin: 0 auto;
   text-align: left;
   align-content: center;
   font-family: bebas-neue-by-fontfabric, sans-serif;
-  width: 37%; /* Full-width */
+  width: 600px; /* Full-width */
+  padding-top:  1.5vw; /* Add some padding */
+  border-radius: 0.694vw;
 }
 
 /*Button inside modal*/
 .filterBtn button
 {
+  width: 100px;
+  margin: 0 auto;
+  padding: 2px;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-radius: .5vw;
+  font-size: 30px;
   color: #5F2D38;
   font-family: bebas-neue-by-fontfabric, sans-serif;
   background-color: #EAE3D1;
@@ -155,6 +187,10 @@ h4
 /*Button inside modal*/
 .filterBtn button:hover
 {
+  width: 100px;
+  padding: .25vw;
+  border-radius: .5vw;
+  font-size: 30px;
   color: #EAE3D1;
   font-family: bebas-neue-by-fontfabric, sans-serif;
   background-color: #5F2D38;
@@ -163,6 +199,10 @@ h4
 /*Hover-over for button inside modal*/
 .modalBtn button:hover
 {
+  width: 7vw;
+  padding: .25vw;
+  border-radius: .5vw;
+  font-size: 2vw;
   color: #5F2D38;
   font-family: bebas-neue-by-fontfabric, sans-serif;
   background-color: #EAE3D1;
@@ -171,6 +211,10 @@ h4
 /*Button click css for modal buttons*/
 .modalBtn button:active
 {
+  width: 7vw;
+  padding: .25vw;
+  border-radius: .5vw;
+  font-size: 2vw;
   color: #5F2D38;
   font-family: bebas-neue-by-fontfabric, sans-serif;
   background-color: #EAE3D1;
@@ -178,7 +222,7 @@ h4
 
 .float {
   float: right;
-  font-size: 10px;
+  font-size: 1vh;
 }
 
 /*Paragraph attribute used when listing skills*/
@@ -193,38 +237,60 @@ p {
   text-align: left;
   align-content: center;
   font-family: bebas-neue-by-fontfabric, sans-serif;
-  width: 37%; /* Full-width */
+  width: 550px; /* Full-width */
+  font-size: 35px; /* Increase font-size */
+  padding: .833vw .833vw .833vw 1.5vw; /* Add some padding */
+  border: .069vw solid #ddd; /* Add a grey border */
+  border-radius: 0.694vw;
 }
 
 /*Cards*/
 .card {
   border-radius: 0.694vw;
   box-shadow: 0 0.278vw 0.556vw 0 rgba(0, 0, 0, 0.2);
-  width: 25%;
-  height: 5%;
+  width: 300px;
+  height: auto;
+  margin-top: 25px;
+  
+  margin-bottom: 25px;
+  background: #EAE3D1;
+  padding-left: .25rem;
 }
 
 /*User Name... Derivative of h1 when implemented*/
 .name {
+  margin-left: 20px;
+  margin-right: 20px;
   text-align: left;
   color: #5F2D38;
+  padding: 0px !important;
+  font-size: 50px;
 }
 
 /*User email address*/
 .email {
+  margin-left: 20px;
   line-height: 0px;
   padding: 0px;
   color: #5F2D38;
+   font-size: 30px;
 }
 
 /*Skills section "header"*/
 .skillsHead {
+  margin-left: 20px;
+  padding-top: 10px;
   color: #5F2D38;
+  font-size: 35px;
+  margin-bottom:-0.694vw;
 }
 
 /*Items in the skills area*/
 .skillsArr{
+  margin-left: 0px;
+  line-height: 0.347vw;
   color: #5F2D38;
+  font-size: 25px;
 }
 
 /*Unordered list reference*/
@@ -234,13 +300,18 @@ ul{
 
 /*Gives round edges*/
 .round {
+  border-radius: 0.694vw;
 }
 
 /*Container for cards in order to use flexbox*/
 .cards-container {
-  width:100%;
+  margin-top: 1vh;
+  width: auto;
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
   flex-flow: wrap;
+  justify-content: space-around;
 }
 
 /*Defines "show" attribute for search bar functionality*/
@@ -248,10 +319,17 @@ ul{
 
 /*Input boxes for sign up page*/
 .inputBox {
+  margin: auto;
+  margin-top: 20px;
+  width: 250px;
+  height: 40px;
 }
 
 /*Input boxes for sign up page*/
 .inputBox2 {
+  margin: 0 auto;
+  width: 250px !important;
+  height: 40px;
 }
 
 /*this is so  there is no extra space around the html or body components*/
@@ -264,21 +342,30 @@ html,body {
 
 /*width of inputs on form*/
 input[type=checkbox] {
+  width: 2vw;
 }
 
 /*Custom Div setup for left side of launch page*/
 .leftDiv
 {
+  width: 40vw;
+  height: 100vh;
 }
 
 /*Used to center Innovation Hub logo found at the center of the left side of the launch page*/
 .hubLogo
 {
+  max-width: 25vw;
+  margin-left: 14.583vw;
+  margin-top: 24.963vh;
 }
 
 /*Custom Div setup for right side of launch page*/
 .rightDiv
 {
+  width: auto;
+  height: auto;
+  margin-right: 0vw;
 }
 
 /*Flex component that aligns the divs from left to right*/
@@ -294,7 +381,13 @@ flex auto*/
 .signUpOrIn
 {
   background-color: #EAE3D1;
+  width: 500px;
+  min-height: 80vh;
+  margin-left: 10vw;
+  margin-top: 5vh;
+  border-radius: 0.694vw;
   flex: auto;
+  padding-bottom: 5vh;
 }
 
 /*Sign Up/Sign In Box
@@ -303,51 +396,68 @@ flex auto*/
 .signUpOrIn2
 {
   background-color: #EAE3D1;
+  width: 500px;
+  height: auto;
+  margin-top: 5vh;
+  border-radius: 0.694vw;
   flex: auto;
+  padding-bottom: 20px;
 }
+
 
 /*The CreatorConnect logo inside of the sign up/log in form*/
 .launchText
 {
+  padding-top: 3vh;
   background-size: cover;
+  margin-bottom: 0vw;
   font-family: bebas-neue-by-fontfabric, sans-serif;
   font-weight: 400;
   font-style: normal;
+  font-size: 70px;
   color:#5F2D38;/*#EAE3D1;*/
   text-align: center;
+  margin-top: 2vh;
 }
 
 /*centers the form*/
 .information
 {
+  width: 250px;
+  margin-top: 0vh;
+  margin: 0 auto;
 }
 
 /*centers the dropdown menus*/
 .dropdown
 {
+  width: 250px;
+  margin-left: 0px;
+  margin-top: 1vh;
 }
 
 /*navigation bar at the top of the page*/
  .topnav {
   position: absolute;
   width: 100vw;
+  height: 55px;
   top: 0;
   overflow: none;
   background-color: #d3d3d3;
   font-family: bebas-neue-by-fontfabric, sans-serif;
 }
 
-/*optimized for phone screens*/
-
-/*optimized for phone screens*/
-
-
+.wrapper {
+  width: 250px;
+  margin: 0 auto;
+}
 
 
 /*link component for navigation bar at the top of the page*/
 .topnav a {
   color: #000000;
   text-align: center;
+  padding: .5vh;
   padding-top: 0;
   text-decoration: none;
 }
@@ -356,7 +466,7 @@ flex auto*/
 .topnav a:hover {
   
   color: white;
-  height: 100%;
+  height: 50px;
 }
 
 
@@ -368,12 +478,14 @@ flex auto*/
 /*button component of the navigation bar*/
 .topnav button {
   margin-top: 0vh;
+  padding-top: 1.5vh;
 }
 
 /*hover over component for button component of the navigation bar*/
 .topnav button:hover {
   background-color: #5F2D38;
   color: white;
+  height: auto;
 }
 
 /*active component for button component of the navigation bar*/
@@ -391,13 +503,19 @@ flex auto*/
 .logout {
   float: right;
   font-family: bebas-neue-by-fontfabric, sans-serif;
+  font-size: 40px;
   background-color: Transparent;
   background-repeat:no-repeat;
   border: none;
   cursor:pointer;
   overflow: hidden;
   outline:none;
+  padding: .25vh;
   color: #5F2D38;
+  margin-top: 1vh;
+  padding-top: 0vh;
+  padding-right: .75vw;
+  padding-left: .75vw;
 }
 
 /*wraps the form so the extra space at the top is not noticable*/
@@ -414,10 +532,779 @@ flex auto*/
 /*container for the left component of the navigation bar*/
 .leftNavBar {
   font-family: bebas-neue-by-fontfabric, sans-serif;
+  font-size: 40px;
   background-color: Transparent;
   background-repeat:no-repeat;
   border: none;
   cursor:pointer;
   overflow: hidden;
+  outline:none;
+  padding: .25vh;
   color: #5F2D38;
+  padding: 0;
+  padding-top: 0vh;
+  margin-left: 0vw;
+  padding-right: 10px;
+  padding-left: 10px;
 }
+
+/*optimized for phone screens*/
+@media only screen and (min-width: 321px) and (max-width: 416px)
+{
+
+  html,body {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    margin:0;
+    padding:0;
+  }
+
+  /*hide the hub logo*/
+  .leftDiv
+  {
+    display:none !important;
+  }
+  
+  /*hover over component for button component of the navigation bar*/
+.topnav button:hover {
+  background-color: #5F2D38;
+  color: white;
+  height: 5.5vh;
+  }
+  
+  .launchText
+  {
+    padding-top: 3vh;
+    background-size: cover;
+    margin-bottom: 0vw;
+    font-family: bebas-neue-by-fontfabric, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 11vw;
+    color:#5F2D38;/*#EAE3D1;*/
+    text-align: center;
+    margin-top: 3vh;
+  }
+
+
+  .signUpOrIn
+  {
+    background-color: #EAE3D1;
+    width: 80vw;
+    min-height: 90vh;
+    margin-left: 10vw;
+    margin-top: 1vh;
+    margin-bottom: 5vh;
+    border-radius: 2.5vw;
+    flex: auto;
+    padding-bottom: 5vh;
+  }
+
+  .inputBox
+  {
+    font-size: 4vw;
+    margin-top: 3vw;
+    display: block;
+    width: 57vw !important;
+    height: 4vh;
+  }
+
+  .dropdown
+  {
+    font-size: 4vw;
+    width: 57vw !important;
+    height: 6vh;
+    margin-left: 2.5vw;
+    margin-top: 1vh;
+  }
+
+  .topnav 
+  {
+   position: absolute;
+   width: 100vw;
+   top: 0;
+   overflow: none;
+   background-color: #d3d3d3;
+   font-family: bebas-neue-by-fontfabric, sans-serif;
+  }
+
+/*container for the left component of the navigation bar*/
+.leftNavBar 
+{
+  font-family: bebas-neue-by-fontfabric, sans-serif;
+  font-size: 30px !important;
+  width: 33.33% !important;
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline:none;
+  color: #5F2D38;
+  padding: 0vw;
+  margin-left: 0vw;
+  padding-right: 0vw;
+  padding-left: 0vw;
+}
+
+.about 
+{
+  padding-top: 2vw !important;
+  padding-right: 15vw !important;
+}
+
+.feedback
+{
+padding-left:10vw !important;
+}
+
+.wnext
+{
+
+  display: inline;
+  white-space: nowrap;
+  overflow: none !important;
+
+  }
+
+/*The text used above the search bar*/
+.textAboveSearch
+{
+  background-size: cover;
+  margin-top: 14vh;
+  font-family: bebas-neue-by-fontfabric, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 13vw;
+  color: #EAE3D1;
+  text-align: center;
+  margin-bottom: .1vh;
+}
+
+/*Input for search bar styling*/
+#myInput {
+  text-align: left;
+  align-content: center;
+  font-family: bebas-neue-by-fontfabric, sans-serif;
+  width: 78%; /* Full-width */
+  height: 4vh;
+  font-size: 5vw; /* Increase font-size */
+  padding: .833vw qvw .833vw .833vw;/* Add some padding */
+  border: .069vw solid #ddd; /* Add a grey border */
+  border-radius: 2.5vw;
+}
+
+/*Cards*/
+.card {
+  border-radius: 2.5vw;
+  box-shadow: 0 0.278vw 0.556vw 0 rgba(0, 0, 0, 0.2);
+  width: 50%;
+  height: 10%;
+  max-width: 36vw;
+  max-height: 60vw;
+  margin-left: 6vw;
+  margin-top: 2vw; /*NOTES*/
+  margin-bottom: 2vw;
+  padding-top: .2vw;
+  padding-bottom: .2vw;
+  background: #EAE3D1;
+  padding-left: .25rem;
+}
+
+.cards-container {
+  margin-left: 4vw;
+  width:100%;
+  display: flex;
+  flex-flow: wrap;
+}
+
+.name {
+  margin-bottom:-1.389vw;
+  margin-left: 2.431vw;
+  margin-right: 2.431vw;
+  text-align: left;
+  color: #5F2D38;
+  font-size: 7vw;
+}
+
+/*User email address*/
+.email {
+  margin-right: 2vw;
+  margin-left: 2.569vw;
+  line-height: 0px;
+  padding: 0px;
+  color: #5F2D38;
+  font-size: 4.784vw;
+}
+
+/*Skills section "header"*/
+.skillsHead {
+  margin-left: 2.569vw;
+  padding-top: .4vw;
+  color: #5F2D38;
+  font-size: 5.6vw;
+  margin-bottom:-0.694vw;
+}
+
+ul{
+  margin: 0vw;
+  list-style-type: none;
+}
+
+/*Items in the skills area*/
+.skillsArr{
+  margin-left: -7vw;
+  line-height: 0.347vw;
+  color: #5F2D38;
+  font-size: 4vw;
+  margin-bottom: 1vh;
+}
+
+
+/*CreatorConnect logo on the pop up modals*/
+.modalLogo
+{
+  background-size: cover;
+  margin-top: 0vh;
+  font-family: bebas-neue-by-fontfabric, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 11.5vw;
+  color: #5F2D38;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+/*container for text inside modals*/
+.modalText
+{
+  margin-top: .5vh;
+  margin-left: 1vw;
+  width: 60vw;
+  height: 50vh;
+}
+
+/*Text inside of modals*/
+.modalText p {
+  font-size: 5.8vw;
+  padding: 0;
+  margin: 0;
+}
+
+/*Button inside modal*/
+.modalBtn button
+{
+  width: 80px;
+  height: 6vh;
+  padding: .25vw;
+  border-radius: 1vw;
+  font-size: 6vw;
+  margin-left: 0vw;
+  margin-top: 0vh;
+  margin-bottom: 1vh;
+  color: #EAE3D1;
+  font-family: bebas-neue-by-fontfabric, sans-serif;
+  background-color: #5F2D38;
+}
+
+/*Hover-over for button inside modal*/
+.modalBtn button:hover
+{
+  width: 15vw;
+  height: 6vh;
+  padding: .25vw;
+  border-radius: 1vw;
+  font-size: 6vw;
+  margin-left: 0vw;
+  margin-top: 0vh;
+  margin-bottom: 1vh;
+  color: #5F2D38;
+  font-family: bebas-neue-by-fontfabric, sans-serif;
+  background-color: #EAE3D1;
+}
+
+/*Button click css for modal buttons*/
+.modalBtn button:active
+{
+  width: 15vw;
+  height: 6vh;
+  padding: .25vw;
+  border-radius: 1vw;
+  font-size: 6vw;
+  margin-left: 0vw;
+  margin-top: 0vh;
+  margin-bottom: 5px;
+  color: #5F2D38;
+  font-family: bebas-neue-by-fontfabric, sans-serif;
+  background-color: #EAE3D1;
+}
+
+/*determines size of team picture on the team tab*/
+.teamPics {
+  margin-top: 5vh;
+  max-width:100%;
+  max-height:100%;
+}
+
+/*change info modal*/
+.editModal {
+  margin-left: 0vw;
+}
+
+.signUpOrIn2
+{
+  background-color: #EAE3D1;
+  width: 300px;
+  height: 655px;
+  margin-left: 0vw;
+  margin-top: 5vh;
+  border-radius: 0.694vw;
+  flex: auto;
+  padding-bottom: 5vh;
+}
+
+/*centers the form*/
+.information
+{
+  width: 250px;
+  min-height: 60vh;
+  margin-left: 0px;
+  margin-top: 0vw;
+}
+
+/*Input boxes for sign up page*/
+.inputBox2{
+  margin-left: 20px !important;
+  margin-top: 15px !important;
+  margin-bottom: 2vh;
+  width: 20vw;
+  height: 5vh;
+}
+
+/*END OF MEDIA */
+
+/*Button inside modal*/
+.filterBtn button
+{
+  width: 60px;
+  margin-right: 5px;
+  padding: .25vw;
+  border-radius: .5vw;
+  font-size: 18px;
+  color: #5F2D38;
+  font-family: bebas-neue-by-fontfabric, sans-serif;
+  background-color: #EAE3D1;
+}
+
+/*Button inside modal*/
+.filterBtn button:hover
+{
+  width: 60px;
+  padding: .25vw;
+  border-radius: .5vw;
+  font-size: 18px;
+  color: #EAE3D1;
+  font-family: bebas-neue-by-fontfabric, sans-serif;
+  background-color: #5F2D38;
+}
+
+/*Input for search bar styling*/
+#btnContainer {
+  display: flex; /* or inline-flex */
+  margin-left: 47px;
+  text-align: left;
+  align-content: center;
+  font-family: bebas-neue-by-fontfabric, sans-serif;
+  width: 37%; /* Full-width */
+  font-size: 2.22vw; /* Increase font-size */
+  padding-top:  1.5vw; /* Add some padding */
+  border-radius: 0.694vw;
+}
+
+.informationWrap {
+  margin-left: 40px;
+}
+
+}
+
+/*optimized for phone screens*/
+@media only screen and (max-width: 320px)
+{
+
+  html,body {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    margin:0;
+    padding:0;
+  }
+
+  /*hide the hub logo*/
+  .leftDiv
+  {
+    display:none !important;
+  }
+  
+  /*hover over component for button component of the navigation bar*/
+.topnav button:hover {
+  background-color: #5F2D38;
+  color: white;
+  height: 5.5vh;
+  }
+  
+  .launchText
+  {
+    padding-top: 3vh;
+    background-size: cover;
+    margin-bottom: 0vw;
+    font-family: bebas-neue-by-fontfabric, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 11vw;
+    color:#5F2D38;/*#EAE3D1;*/
+    text-align: center;
+    margin-top: 3vh;
+  }
+
+
+  .signUpOrIn
+  {
+    background-color: #EAE3D1;
+    width: 80vw;
+    min-height: 90vh;
+    margin-left: 10vw;
+    margin-top: 1vh;
+    margin-bottom: 5vh;
+    border-radius: 2.5vw;
+    flex: auto;
+    padding-bottom: 5vh;
+  }
+
+  .inputBox
+  {
+    font-size: 4vw;
+    margin-top: 3vw;
+    display: block;
+    width: 57vw !important;
+    height: 4vh;
+  }
+
+  .dropdown
+  {
+    font-size: 4vw;
+    width: 57vw !important;
+    height: 6vh;
+    margin-left: 2.5vw;
+    margin-top: 1vh;
+  }
+
+  .topnav 
+  {
+   position: absolute;
+   width: 100vw;
+   top: 0;
+   overflow: none;
+   background-color: #d3d3d3;
+   font-family: bebas-neue-by-fontfabric, sans-serif;
+  }
+
+/*container for the left component of the navigation bar*/
+.leftNavBar 
+{
+  font-family: bebas-neue-by-fontfabric, sans-serif;
+  font-size: 3.4vh !important;
+  width: 33.33% !important;
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline:none;
+  color: #5F2D38;
+  padding: 0vw;
+  margin-left: 0vw;
+  padding-right: 0vw;
+  padding-left: 0vw;
+}
+
+.about 
+{
+  padding-top: 2vw !important;
+  padding-right: 15vw !important;
+}
+
+.feedback
+{
+padding-left:10vw !important;
+}
+
+.wnext
+{
+
+  display: inline;
+  white-space: nowrap;
+  overflow: none !important;
+
+  }
+
+/*The text used above the search bar*/
+.textAboveSearch
+{
+  background-size: cover;
+  margin-top: 14vh;
+  font-family: bebas-neue-by-fontfabric, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 13vw;
+  color: #EAE3D1;
+  text-align: center;
+  margin-bottom: .1vh;
+}
+
+/*Input for search bar styling*/
+#myInput {
+  text-align: left;
+  align-content: center;
+  font-family: bebas-neue-by-fontfabric, sans-serif;
+  width: 78%; /* Full-width */
+  height: 4vh;
+  font-size: 5vw; /* Increase font-size */
+  padding: .833vw qvw .833vw .833vw;/* Add some padding */
+  border: .069vw solid #ddd; /* Add a grey border */
+  border-radius: 2.5vw;
+}
+
+/*Cards*/
+.card {
+  border-radius: 2.5vw;
+  box-shadow: 0 0.278vw 0.556vw 0 rgba(0, 0, 0, 0.2);
+  width: 50%;
+  height: 10%;
+  max-width: 36vw;
+  max-height: 60vw;
+  margin-left: 6vw;
+  margin-top: 2vw; /*NOTES*/
+  margin-bottom: 2vw;
+  padding-top: .2vw;
+  padding-bottom: .2vw;
+  background: #EAE3D1;
+  padding-left: .25rem;
+}
+
+.cards-container {
+  margin-left: 4vw;
+  width:100%;
+  display: flex;
+  flex-flow: wrap;
+}
+
+.name {
+  margin-bottom:-1.389vw;
+  margin-left: 2.431vw;
+  margin-right: 2.431vw;
+  text-align: left;
+  color: #5F2D38;
+  font-size: 7vw;
+}
+
+/*User email address*/
+.email {
+  margin-right: 2vw;
+  margin-left: 2.569vw;
+  line-height: 0px;
+  padding: 0px;
+  color: #5F2D38;
+  font-size: 4.784vw;
+}
+
+/*Skills section "header"*/
+.skillsHead {
+  margin-left: 2.569vw;
+  padding-top: .4vw;
+  color: #5F2D38;
+  font-size: 5.6vw;
+  margin-bottom:-0.694vw;
+}
+
+ul{
+  margin: 0vw;
+  list-style-type: none;
+}
+
+/*Items in the skills area*/
+.skillsArr{
+  margin-left: -10vw;
+  line-height: 0.347vw;
+  color: #5F2D38;
+  font-size: 12px;
+  margin-bottom: 1vh;
+}
+
+
+/*CreatorConnect logo on the pop up modals*/
+.modalLogo
+{
+  background-size: cover;
+  margin-top: 0vh;
+  font-family: bebas-neue-by-fontfabric, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 11.5vw;
+  color: #5F2D38;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+/*container for text inside modals*/
+.modalText
+{
+  margin-top: .5vh;
+  margin-left: 1vw;
+  width: 60vw;
+  height: 50vh;
+}
+
+/*Text inside of modals*/
+.modalText p {
+  font-size: 5.8vw;
+  padding: 0;
+  margin: 0;
+}
+
+/*Button inside modal*/
+.modalBtn button
+{
+  width: 80px;
+  height: 7vh;
+  padding: .25vw;
+  border-radius: 1vw;
+  font-size: 6.2vw;
+  margin-left: 0vw;
+  margin-top: 0vh;
+  margin-bottom: 1vh;
+  color: #EAE3D1;
+  font-family: bebas-neue-by-fontfabric, sans-serif;
+  background-color: #5F2D38;
+}
+
+/*Hover-over for button inside modal*/
+.modalBtn button:hover
+{
+  width: 15vw;
+  height: 6.6vh;
+  padding: .25vw;
+  border-radius: 1vw;
+  font-size: 6.2vw;
+  margin-left: 0vw;
+  margin-top: 0vh;
+  margin-bottom: 1vh;
+  color: #5F2D38;
+  font-family: bebas-neue-by-fontfabric, sans-serif;
+  background-color: #EAE3D1;
+}
+
+/*Button click css for modal buttons*/
+.modalBtn button:active
+{
+  width: 15vw;
+  height: 6vh;
+  padding: .25vw;
+  border-radius: 1vw;
+  font-size: 6vw;
+  margin-left: 0vw;
+  margin-top: 0vh;
+  margin-bottom: 5px;
+  color: #5F2D38;
+  font-family: bebas-neue-by-fontfabric, sans-serif;
+  background-color: #EAE3D1;
+}
+
+/*determines size of team picture on the team tab*/
+.teamPics {
+  margin-top: 5vh;
+  max-width:100%;
+  max-height:100%;
+}
+
+/*change info modal*/
+.editModal {
+  margin-left: 0vw;
+}
+
+.signUpOrIn2
+{
+  background-color: #EAE3D1;
+  width: 220px;
+  height: 450px;
+  margin-left: 0vw;
+  margin-top: 5vh;
+  border-radius: 0.694vw;
+  flex: auto;
+  padding-bottom: 5vh;
+}
+
+/*centers the form*/
+.information
+{
+  width: 250px;
+  min-height: 60vh;
+  margin-left: 0px;
+  margin-top: 0vw;
+}
+
+/*Input boxes for sign up page*/
+.inputBox2{
+  margin-left: 20px !important;
+  margin-top: 15px !important;
+  margin-bottom: 2vh;
+  width: 20vw;
+  height: 5vh;
+}
+
+/*END OF MEDIA */
+
+/*Button inside modal*/
+.filterBtn button
+{
+  width: 40px;
+  margin-right: 5px;
+  padding: .25vw;
+  border-radius: .5vw;
+  font-size: 12px;
+  color: #5F2D38;
+  font-family: bebas-neue-by-fontfabric, sans-serif;
+  background-color: #EAE3D1;
+}
+
+/*Button inside modal*/
+.filterBtn button:hover
+{
+  width: 40px;
+  padding: .25vw;
+  border-radius: .5vw;
+  font-size: 12px;
+  color: #EAE3D1;
+  font-family: bebas-neue-by-fontfabric, sans-serif;
+  background-color: #5F2D38;
+}
+
+/*Input for search bar styling*/
+#btnContainer {
+  display: flex; /* or inline-flex */
+  margin-left: 47px;
+  text-align: left;
+  align-content: center;
+  font-family: bebas-neue-by-fontfabric, sans-serif;
+  width: 37%; /* Full-width */
+  font-size: 2.22vw; /* Increase font-size */
+  padding-top:  1.5vw; /* Add some padding */
+  border-radius: 0.694vw;
+}
+
+.informationWrap {
+  margin-left: 20px;
+}
+
+}
+

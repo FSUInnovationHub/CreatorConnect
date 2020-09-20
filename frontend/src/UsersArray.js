@@ -13,7 +13,7 @@ class UsersArray extends React.Component {
 
   //connects to the endpoint and parses its response to then set this.state's data value to the response.
   componentDidMount() {
-    fetch('https://FSUinnovationHub.pythonanywhere.com/allRandUsers')
+    fetch('http://localhost:5000/allRandUsers')
     .then(results => results.json())
     .then(response => {
       this.setState({data: response.data})
