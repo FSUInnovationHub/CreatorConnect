@@ -52,7 +52,6 @@ export default function MultipleSelect() {
 
   return isLoggedOut === 0 ? (
     <div>
-      {alert(isLoggedOut)}
       {window.location.assign('http://localhost:3000/cards')}
     </div>
   )
@@ -60,7 +59,7 @@ export default function MultipleSelect() {
   (
     //TO DO: ADD HOVERS
     <div className="contentWrapper">
-      {alert(isLoggedOut)}
+      
       <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/bootstrap-select.min.js"></script>
       <div className ="bothDivs">
         <div className = "leftDiv">
