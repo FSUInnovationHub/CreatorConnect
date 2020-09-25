@@ -8,6 +8,8 @@
     "axios": "^0.19.2",
     "babel-types": "^6.26.0",
     "bootstrap": "^4.4.1",
+    "email-existence": "^0.1.6",
+    "email-validator": "^2.0.4",
     "js-cookie": "^2.2.1",
     "mdbreact": "^4.25.1",
     "multiselect-dropdown-react": "^1.0.5",
