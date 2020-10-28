@@ -20,7 +20,7 @@ body {
 }
 
 .tooltip .tooltiptext {
-  font-size: 25px;
+ 
   visibility: hidden;
   
   width: auto;
@@ -144,7 +144,6 @@ h4
   margin: 0;
 }
 
-
 /*Button inside modal*/
 .modalBtn button
 {
@@ -184,13 +183,15 @@ h4
   background-color: #EAE3D1;
 }
 
+.tooltip .tooltiptext {
+ 
+ font-size: 30px;
+  
+}
+
 /*Button inside modal*/
 .filterBtn button:hover
 {
-  width: 100px;
-  padding: .25vw;
-  border-radius: .5vw;
-  font-size: 30px;
   color: #EAE3D1;
   font-family: bebas-neue-by-fontfabric, sans-serif;
   background-color: #5F2D38;
@@ -199,10 +200,6 @@ h4
 /*Hover-over for button inside modal*/
 .modalBtn button:hover
 {
-  width: 7vw;
-  padding: .25vw;
-  border-radius: .5vw;
-  font-size: 2vw;
   color: #5F2D38;
   font-family: bebas-neue-by-fontfabric, sans-serif;
   background-color: #EAE3D1;
@@ -211,10 +208,6 @@ h4
 /*Button click css for modal buttons*/
 .modalBtn button:active
 {
-  width: 7vw;
-  padding: .25vw;
-  border-radius: .5vw;
-  font-size: 2vw;
   color: #5F2D38;
   font-family: bebas-neue-by-fontfabric, sans-serif;
   background-color: #EAE3D1;
@@ -440,7 +433,7 @@ flex auto*/
  .topnav {
   position: absolute;
   width: 100vw;
-  height: 55px;
+  height: 50px;
   top: 0;
   overflow: none;
   background-color: #d3d3d3;
@@ -451,6 +444,7 @@ flex auto*/
   width: 250px;
   margin: 0 auto;
 }
+
 
 
 /*link component for navigation bar at the top of the page*/
@@ -548,9 +542,22 @@ flex auto*/
   padding-left: 10px;
 }
 
-/*optimized for phone screens*/
+/*IPHONE XR*/
 @media only screen and (min-width: 321px) and (max-width: 416px)
 {
+  .aboutUs {
+    font-size: 20px;
+  }
+
+  .topnav {
+    position: absolute;
+    width: 100vw;
+    height: 90px;
+    top: 0;
+    overflow: none;
+    background-color: #d3d3d3;
+    font-family: bebas-neue-by-fontfabric, sans-serif;
+  }
 
   html,body {
     overflow-x: hidden;
@@ -574,13 +581,13 @@ flex auto*/
   
   .launchText
   {
-    padding-top: 3vh;
+    padding-top: 20px;
     background-size: cover;
     margin-bottom: 0vw;
     font-family: bebas-neue-by-fontfabric, sans-serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 11vw;
+    font-size: 35px;
     color:#5F2D38;/*#EAE3D1;*/
     text-align: center;
     margin-top: 3vh;
@@ -712,8 +719,8 @@ padding-left:10vw !important;
 }
 
 .cards-container {
-  margin-left: 4vw;
-  width:100%;
+  margin-left: 0;
+  max-width: 350px;
   display: flex;
   flex-flow: wrap;
 }
@@ -769,7 +776,7 @@ ul{
   font-family: bebas-neue-by-fontfabric, sans-serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 11.5vw;
+  font-size: 35px;
   color: #5F2D38;
   text-align: center;
   padding: 0;
@@ -781,13 +788,13 @@ ul{
 {
   margin-top: .5vh;
   margin-left: 1vw;
-  width: 60vw;
+  width: 250px;
   height: 50vh;
 }
 
 /*Text inside of modals*/
 .modalText p {
-  font-size: 5.8vw;
+  font-size: 18px;
   padding: 0;
   margin: 0;
 }
@@ -795,11 +802,11 @@ ul{
 /*Button inside modal*/
 .modalBtn button
 {
-  width: 80px;
-  height: 6vh;
+  width: 60px;
+  height: 50px;
   padding: .25vw;
   border-radius: 1vw;
-  font-size: 6vw;
+  font-size: 20px;
   margin-left: 0vw;
   margin-top: 0vh;
   margin-bottom: 1vh;
@@ -811,14 +818,6 @@ ul{
 /*Hover-over for button inside modal*/
 .modalBtn button:hover
 {
-  width: 15vw;
-  height: 6vh;
-  padding: .25vw;
-  border-radius: 1vw;
-  font-size: 6vw;
-  margin-left: 0vw;
-  margin-top: 0vh;
-  margin-bottom: 1vh;
   color: #5F2D38;
   font-family: bebas-neue-by-fontfabric, sans-serif;
   background-color: #EAE3D1;
@@ -827,14 +826,6 @@ ul{
 /*Button click css for modal buttons*/
 .modalBtn button:active
 {
-  width: 15vw;
-  height: 6vh;
-  padding: .25vw;
-  border-radius: 1vw;
-  font-size: 6vw;
-  margin-left: 0vw;
-  margin-top: 0vh;
-  margin-bottom: 5px;
   color: #5F2D38;
   font-family: bebas-neue-by-fontfabric, sans-serif;
   background-color: #EAE3D1;
@@ -855,13 +846,13 @@ ul{
 .signUpOrIn2
 {
   background-color: #EAE3D1;
-  width: 300px;
+  width: 260px;
   height: 655px;
   margin-left: 0vw;
-  margin-top: 5vh;
+  margin-top: 0;
   border-radius: 0.694vw;
   flex: auto;
-  padding-bottom: 5vh;
+  padding-bottom: 0;
 }
 
 /*centers the form*/
@@ -875,10 +866,8 @@ ul{
 
 /*Input boxes for sign up page*/
 .inputBox2{
-  margin-left: 20px !important;
-  margin-top: 15px !important;
-  margin-bottom: 2vh;
-  width: 20vw;
+  margin: 0;
+  width: 260px !important;
   height: 5vh;
 }
 
@@ -887,23 +876,25 @@ ul{
 /*Button inside modal*/
 .filterBtn button
 {
-  width: 60px;
+  width: 48px;
   margin-right: 5px;
   padding: .25vw;
   border-radius: .5vw;
-  font-size: 18px;
+  font-size: 14px;
   color: #5F2D38;
   font-family: bebas-neue-by-fontfabric, sans-serif;
   background-color: #EAE3D1;
 }
 
+.tooltip .tooltiptext {
+ 
+  font-size: 12px;
+   
+ }
+
 /*Button inside modal*/
 .filterBtn button:hover
 {
-  width: 60px;
-  padding: .25vw;
-  border-radius: .5vw;
-  font-size: 18px;
   color: #EAE3D1;
   font-family: bebas-neue-by-fontfabric, sans-serif;
   background-color: #5F2D38;
@@ -912,12 +903,11 @@ ul{
 /*Input for search bar styling*/
 #btnContainer {
   display: flex; /* or inline-flex */
-  margin-left: 47px;
+  margin: 0 auto;
   text-align: left;
   align-content: center;
   font-family: bebas-neue-by-fontfabric, sans-serif;
-  width: 37%; /* Full-width */
-  font-size: 2.22vw; /* Increase font-size */
+  width: 320px;
   padding-top:  1.5vw; /* Add some padding */
   border-radius: 0.694vw;
 }
@@ -928,9 +918,21 @@ ul{
 
 }
 
-/*optimized for phone screens*/
+/*IPHONE 5S*/
 @media only screen and (max-width: 320px)
 {
+  .topnav {
+    position: absolute;
+    width: 100vw;
+    height: 60px;
+    top: 0;
+    overflow: none;
+    background-color: #d3d3d3;
+    font-family: bebas-neue-by-fontfabric, sans-serif;
+  }
+  .bigWrapper {
+    width: 320px;
+  }
 
   html,body {
     overflow-x: hidden;
@@ -954,13 +956,12 @@ ul{
   
   .launchText
   {
-    padding-top: 3vh;
     background-size: cover;
     margin-bottom: 0vw;
     font-family: bebas-neue-by-fontfabric, sans-serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 11vw;
+    font-size: 30px;
     color:#5F2D38;/*#EAE3D1;*/
     text-align: center;
     margin-top: 3vh;
@@ -982,19 +983,20 @@ ul{
 
   .inputBox
   {
-    font-size: 4vw;
-    margin-top: 3vw;
+    margin-left: 15px;
+    font-size: 15px;
+    margin-top: 0px;
     display: block;
-    width: 57vw !important;
-    height: 4vh;
+    width: 160px !important;
+    height: 20px;
   }
 
   .dropdown
   {
     font-size: 4vw;
-    width: 57vw !important;
+    width: 170px !important;
     height: 6vh;
-    margin-left: 2.5vw;
+    margin-left: 7px;
     margin-top: 1vh;
   }
 
@@ -1092,8 +1094,8 @@ padding-left:10vw !important;
 }
 
 .cards-container {
-  margin-left: 4vw;
-  width:100%;
+  margin-left: 0;
+  width:320px;
   display: flex;
   flex-flow: wrap;
 }
@@ -1149,7 +1151,7 @@ ul{
   font-family: bebas-neue-by-fontfabric, sans-serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 11.5vw;
+  font-size: 25px;
   color: #5F2D38;
   text-align: center;
   padding: 0;
@@ -1159,6 +1161,7 @@ ul{
 /*container for text inside modals*/
 .modalText
 {
+  font-size: 20px;
   margin-top: .5vh;
   margin-left: 1vw;
   width: 60vw;
@@ -1167,7 +1170,7 @@ ul{
 
 /*Text inside of modals*/
 .modalText p {
-  font-size: 5.8vw;
+  font-size: 18px;
   padding: 0;
   margin: 0;
 }
@@ -1175,14 +1178,14 @@ ul{
 /*Button inside modal*/
 .modalBtn button
 {
-  width: 80px;
-  height: 7vh;
+  width: 50px;
+  height: 35px;
   padding: .25vw;
   border-radius: 1vw;
-  font-size: 6.2vw;
+  font-size: 15px;
   margin-left: 0vw;
-  margin-top: 0vh;
-  margin-bottom: 1vh;
+  margin-top: 5px;
+  margin-bottom: 5px;
   color: #EAE3D1;
   font-family: bebas-neue-by-fontfabric, sans-serif;
   background-color: #5F2D38;
@@ -1191,14 +1194,6 @@ ul{
 /*Hover-over for button inside modal*/
 .modalBtn button:hover
 {
-  width: 15vw;
-  height: 6.6vh;
-  padding: .25vw;
-  border-radius: 1vw;
-  font-size: 6.2vw;
-  margin-left: 0vw;
-  margin-top: 0vh;
-  margin-bottom: 1vh;
   color: #5F2D38;
   font-family: bebas-neue-by-fontfabric, sans-serif;
   background-color: #EAE3D1;
@@ -1207,14 +1202,6 @@ ul{
 /*Button click css for modal buttons*/
 .modalBtn button:active
 {
-  width: 15vw;
-  height: 6vh;
-  padding: .25vw;
-  border-radius: 1vw;
-  font-size: 6vw;
-  margin-left: 0vw;
-  margin-top: 0vh;
-  margin-bottom: 5px;
   color: #5F2D38;
   font-family: bebas-neue-by-fontfabric, sans-serif;
   background-color: #EAE3D1;
@@ -1235,8 +1222,8 @@ ul{
 .signUpOrIn2
 {
   background-color: #EAE3D1;
-  width: 220px;
-  height: 450px;
+  width: 200px;
+  height: 472px;
   margin-left: 0vw;
   margin-top: 5vh;
   border-radius: 0.694vw;
@@ -1255,10 +1242,10 @@ ul{
 
 /*Input boxes for sign up page*/
 .inputBox2{
-  margin-left: 20px !important;
+  margin-left: 0 !important;
   margin-top: 15px !important;
   margin-bottom: 2vh;
-  width: 20vw;
+  width: 200px !important;
   height: 5vh;
 }
 
@@ -1277,13 +1264,15 @@ ul{
   background-color: #EAE3D1;
 }
 
+.tooltip .tooltiptext {
+ 
+  font-size: 12px;
+   
+ }
+
 /*Button inside modal*/
 .filterBtn button:hover
 {
-  width: 40px;
-  padding: .25vw;
-  border-radius: .5vw;
-  font-size: 12px;
   color: #EAE3D1;
   font-family: bebas-neue-by-fontfabric, sans-serif;
   background-color: #5F2D38;
@@ -1292,11 +1281,13 @@ ul{
 /*Input for search bar styling*/
 #btnContainer {
   display: flex; /* or inline-flex */
-  margin-left: 47px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 20px;
   text-align: left;
   align-content: center;
   font-family: bebas-neue-by-fontfabric, sans-serif;
-  width: 37%; /* Full-width */
+  width: 200px; /* Full-width */
   font-size: 2.22vw; /* Increase font-size */
   padding-top:  1.5vw; /* Add some padding */
   border-radius: 0.694vw;

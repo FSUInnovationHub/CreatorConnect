@@ -22,6 +22,7 @@ class Error extends React.Component {
   state = {
     toLaunch: false,
   }
+  
   handleSubmit = () => {
     this.setState({
       toLaunch: true,

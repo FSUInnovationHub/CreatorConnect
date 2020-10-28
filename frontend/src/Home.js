@@ -300,7 +300,7 @@ class Home extends React.Component {
   render() {
     return this.state.data === 0 ?
     (
-      <div> {/* DO NOT REMOVE THIS DIV COMPONENT*/}
+      <div className="bigWrapper"> {/* DO NOT REMOVE THIS DIV COMPONENT*/}
       <div class="topnav">
         <form className="formWrap" action='http://localhost:5000/logout' method = 'POST' >
           <button className = "logout" type="submit">Logout</button>
@@ -362,7 +362,7 @@ class Home extends React.Component {
               {
 
               }
-          }}>delete account</button>
+          }}>delete user</button>
           <div className="editModal">
           <div className = "signUpOrIn2">
             <div className = "CreatorConnectLogo">
