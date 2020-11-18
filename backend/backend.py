@@ -14,6 +14,9 @@ import json
 from pymongo import MongoClient
 from flask.sessions import SecureCookieSessionInterface
 import time
+import uuid
+import sendgrid
+from sendgrid.helpers.mail import *
 
 class Response:
     def __init__(self, code, data, *args):
@@ -46,6 +49,39 @@ def getResponseData(code):
 
     # Return the code's corresponding dict
     return possibleCodes.get(code, errObj)
+
+
+def mailTo(send_to, urlToken):
+    sg = sendgrid.SendGridAPIClient(api_key="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")
+    from_email = Email("bismarka2010@gmail.com")
+    to_email = To(send_to)
+    subject = "Account activation"
+    content = Content("text/html", defualtTemplate(urlToken))
+    mail = Mail(from_email, to_email, subject, content)
+    sg.client.mail.send.post(request_body=mail.get()) 
+
+
+def defualtTemplate(token):
+      token = token.replace("/", "!")
+      print(token)
+      url = "http://localhost:5000/" + token
+      #url = "http://localhost:5000/allRandUsers"
+      content = """
+                <html>
+                  <head>
+                   </head>
+                    <body>
+                      <h4>Verification Email</h4>
+                        <p>Thanks for registering for CreatorConnect!</p>
+                        <p>Please click the below link to verify your email address:</p>
+                        <p><a href='{}'>{}</a></p>
+                        <div><strong>NOTE:</strong> The fake backend displayed this "email" so you can test without an api. A real backend would send a real email.</div>
+ 
+                   </body>
+                 </html>
+               """.format(url,url)
+      return content
+
 
 uri = connect.CONNECTION_STRING
 client = MongoClient(uri)
@@ -98,6 +134,15 @@ def listRandomUsers():
     return Response(200, users).serialize()
 
 
+@app.route('/<token>')
+def verifyToken(token):
+    # Search for random users and typecast to list
+    
+
+    # Return new response object formatted with users
+    return Response(200, token).serialize()
+
+
 #ACTIONS
 @app.route('/register', methods=['POST'])
 def createNewUser():
@@ -127,9 +172,19 @@ def createNewUser():
         wrongPassword = False
         nonexistentUser = False
         existentUser = False
-        mongo.db.users.insert_one({'name': name, 'email': document['fsuEmail'].lower(), 'hashedPassword': hashedPassword, 'gradYear': document['gradYear'], 'skills': skillsArray})
+        #mongo.db.users.insert_one({'name': name, 'email': document['fsuEmail'].lower(), 'hashedPassword': hashedPassword, 'gradYear': document['gradYear'], 'skills': skillsArray})
+        urlToken = uuid.uuid1()
+        urlToken = bcrypt.hashpw(str(urlToken).encode('utf8'), bcrypt.gensalt()) 
+        urlToken = str(urlToken)
+        mongo.db.users.insert_one({'name': name, 
+                                  'email': document['fsuEmail'].lower(), 
+                                  'hashedPassword': hashedPassword, 
+                                  'token': urlToken,
+                                  'status' :0,
+                                  'gradYear': document['gradYear'], 
+                                  'skills': skillsArray})
         user = mongo.db.users.find_one({'email': emailEntered})
-
+        mailTo(document['fsuEmail'], urlToken)
         session['username'] = str(user['_id'])
         person = user['name']
         email = user['email'].lower()
@@ -168,22 +223,30 @@ def login():
         existentUser = False
         return redirect("http://localhost:3000/cards")
     else:
-        if (bcrypt.checkpw(passwordEntered.encode('utf8'), user['hashedPassword'])):
-            wrongPassword = False
-            nonexistentUser = False
-            existentUser = False
-            session['username'] = str(user['_id']) #signs user in
-            person = user['name']
-            email = user['email'].lower()
-            passwordForChange = user['hashedPassword']## need to go to hashed password later to really change
-            graduYear = user['gradYear']
-            skillsForChange = user['skills']
-            return redirect("http://localhost:3000/cards")
+        if(2>1):#user['status'] == 1):
+            if (bcrypt.checkpw(passwordEntered.encode('utf8'), user['hashedPassword'])):   
+              wrongPassword = False
+              nonexistentUser = False
+              existentUser = False
+              session['username'] = str(user['_id']) #signs user in
+              person = user['name']
+              email = user['email'].lower()
+              passwordForChange = user['hashedPassword']## need to go to hashed password later to really change
+              graduYear = user['gradYear']
+              skillsForChange = user['skills']
+              return redirect("http://localhost:3000/cards")
+            else:
+              wrongPassword = True
+              nonexistentUser = False
+              existentUser = False
+              return redirect("http://localhost:3000/cards")
         else:
             wrongPassword = True
             nonexistentUser = False
             existentUser = False
             return redirect("http://localhost:3000/cards")
+                
+
   elif request.method == 'GET':
     if 'username' in session:
       return "0"
