@@ -1,5 +1,4 @@
 import connect
-import sendgridKey
 import sys
 import json
 from os import environ
@@ -52,8 +51,8 @@ def getResponseData(code):
     return possibleCodes.get(code, errObj)
 
 
-def mailTo(send_to, urlToken):
-    sg = sendgrid.SendGridAPIClient(api_key= sendgridKey.API_KEY)
+def mailTo(send_to,urlToken):
+    sg = sendgrid.SendGridAPIClient(api_key="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")
     from_email = Email("bismarka2010@gmail.com")
     to_email = To(send_to)
     subject = "Account activation"
@@ -63,17 +62,14 @@ def mailTo(send_to, urlToken):
 
 
 def defualtTemplate(token):
-      token = token.replace("/", "!")
-      print(token)
-      url = "http://localhost:5000/" + token
-      #url = "http://localhost:5000/allRandUsers"
+      url = "http://localhost:3000/verify?token="+ token + "/"
       content = """
                 <html>
                   <head>
                    </head>
                     <body>
                       <h4>Verification Email</h4>
-                        <p>Thanks for registering for CreatorConnect!</p>
+                        <p>Thanks for registering!</p>
                         <p>Please click the below link to verify your email address:</p>
                         <p><a href='{}'>{}</a></p>
                         <div><strong>NOTE:</strong> The fake backend displayed this "email" so you can test without an api. A real backend would send a real email.</div>
@@ -135,15 +131,6 @@ def listRandomUsers():
     return Response(200, users).serialize()
 
 
-@app.route('/<token>')
-def verifyToken(token):
-    # Search for random users and typecast to list
-    
-
-    # Return new response object formatted with users
-    return Response(200, token).serialize()
-
-
 #ACTIONS
 @app.route('/register', methods=['POST'])
 def createNewUser():
@@ -185,8 +172,8 @@ def createNewUser():
                                   'gradYear': document['gradYear'], 
                                   'skills': skillsArray})
         user = mongo.db.users.find_one({'email': emailEntered})
-        mailTo(document['fsuEmail'], urlToken)
-        session['username'] = str(user['_id'])
+        mailTo("oak18b@my.fsu.edu",urlToken)
+        session['username'] = str(user['_id']) #solomonkaura@gmail.com
         person = user['name']
         email = user['email'].lower()
         passwordForChange = user['hashedPassword']## need to go to hashed password later to really change
@@ -224,7 +211,7 @@ def login():
         existentUser = False
         return redirect("http://localhost:3000/cards")
     else:
-        if(2>1):#user['status'] == 1):
+        if(user['status'] == 1):
             if (bcrypt.checkpw(passwordEntered.encode('utf8'), user['hashedPassword'])):   
               wrongPassword = False
               nonexistentUser = False

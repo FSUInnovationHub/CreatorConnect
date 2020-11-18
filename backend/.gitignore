@@ -40,6 +40,7 @@ instance/
 
 # Config File
 connect.py
+sendgridKey.py
 
 #vscode
 .vscode/
