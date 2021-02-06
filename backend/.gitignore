@@ -41,6 +41,7 @@ instance/
 # Config File
 connect.py
 sendgridKey.py
+secretKeys.py
 
 #vscode
 .vscode/

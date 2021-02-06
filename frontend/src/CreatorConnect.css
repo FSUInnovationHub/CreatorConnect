@@ -1,5 +1,12 @@
 @charset "UTF-8";
 
+.btnDiv {
+  display: flex;
+
+  flex-direction: row;
+  width: auto;
+  margin: 0 auto;
+}
 
 /*Garnet Background*/
 body {
@@ -14,24 +21,25 @@ body {
   text-align: center;
 }
 .tooltip {
-  position: center;
+  margin-left: 2px;
+  margin-right: 2px;
+  justify-content: space-around;
   
-  display: inline-block;
 }
-
 .tooltip .tooltiptext {
  
   visibility: hidden;
+  font-family: bebas-neue-by-fontfabric, sans-serif;
   
   width: auto;
   background-color: #EAE3D1;
   color: #5F2D38;
   text-align: left;
-  border-radius: .5vw;
+  border-radius: 10px;
   border-style: solid;
   border-color: #5F2D38;
   padding: 10px;
-  margin-left: 10px;
+  margin-left: 0;
   /* Position the tooltip */
   position: absolute;
   
@@ -44,12 +52,10 @@ body {
 /*Header used in cards*/
 h1 {
   background-size: cover;
-  margin-top: 1.875vw;
-  margin-bottom: 0vw;
   font-family: bebas-neue-by-fontfabric, sans-serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 6.944vw;
+  font-size: 50px !important;
   color:#5F2D38;/*#EAE3D1;*/
   text-align: center;
 }
@@ -57,12 +63,10 @@ h1 {
 /*Header used in top logo*/
 h2 {
   background-size: cover;
-  margin-top: 1.875vw;
-  margin-bottom: 5vw;
   font-family: bebas-neue-by-fontfabric, sans-serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 6.944vw;
+  font-size: 80px !important;
   color: #EAE3D1;
   text-align: center;
 }
@@ -156,26 +160,15 @@ h4
   background-color: #5F2D38;
 }
 
-/*Input for search bar styling*/
-#btnContainer {
-  display: flex; /* or inline-flex */
-  margin: 0 auto;
-  text-align: left;
-  align-content: center;
-  font-family: bebas-neue-by-fontfabric, sans-serif;
-  width: 600px; /* Full-width */
-  padding-top:  1.5vw; /* Add some padding */
-  border-radius: 0.694vw;
-}
+
 
 /*Button inside modal*/
 .filterBtn button
 {
-  width: 100px;
+  width: auto;
   margin: 0 auto;
   padding: 2px;
-  margin-left: 10px;
-  margin-right: 10px;
+  
   border-radius: .5vw;
   font-size: 30px;
   color: #5F2D38;
@@ -251,14 +244,7 @@ p {
 }
 
 /*User Name... Derivative of h1 when implemented*/
-.name {
-  margin-left: 20px;
-  margin-right: 20px;
-  text-align: left;
-  color: #5F2D38;
-  padding: 0px !important;
-  font-size: 50px;
-}
+
 
 /*User email address*/
 .email {
@@ -328,7 +314,7 @@ ul{
 /*this is so  there is no extra space around the html or body components*/
 html,body {
   overflow-x: hidden;
-  overflow-y: scroll;
+  height: auto;
   margin:0;
   padding:0;
 }
@@ -544,7 +530,15 @@ flex auto*/
 
 /*IPHONE XR*/
 @media only screen and (min-width: 321px) and (max-width: 416px)
-{
+{ 
+  h1 {
+    font-size: 12px !important;
+  }
+
+  h2 {
+    font-size: 20px !important;
+  }
+
   .aboutUs {
     font-size: 20px;
   }
@@ -720,19 +714,12 @@ padding-left:10vw !important;
 
 .cards-container {
   margin-left: 0;
-  max-width: 350px;
+  margin: auto;
   display: flex;
   flex-flow: wrap;
 }
 
-.name {
-  margin-bottom:-1.389vw;
-  margin-left: 2.431vw;
-  margin-right: 2.431vw;
-  text-align: left;
-  color: #5F2D38;
-  font-size: 7vw;
-}
+
 
 /*User email address*/
 .email {
@@ -840,6 +827,7 @@ ul{
 
 /*change info modal*/
 .editModal {
+  width: 400px;
   margin-left: 0vw;
 }
 
@@ -877,7 +865,7 @@ ul{
 .filterBtn button
 {
   width: 48px;
-  margin-right: 5px;
+  
   padding: .25vw;
   border-radius: .5vw;
   font-size: 14px;
@@ -900,17 +888,7 @@ ul{
   background-color: #5F2D38;
 }
 
-/*Input for search bar styling*/
-#btnContainer {
-  display: flex; /* or inline-flex */
-  margin: 0 auto;
-  text-align: left;
-  align-content: center;
-  font-family: bebas-neue-by-fontfabric, sans-serif;
-  width: 320px;
-  padding-top:  1.5vw; /* Add some padding */
-  border-radius: 0.694vw;
-}
+
 
 .informationWrap {
   margin-left: 40px;
@@ -921,6 +899,19 @@ ul{
 /*IPHONE 5S*/
 @media only screen and (max-width: 320px)
 {
+  h1 {
+    font-size: 18px !important;
+  }
+
+  h2 {
+    font-size: 40px !important;
+  }
+
+  .btnDiv {
+    width: 265px;
+    margin: 0 auto;
+  }
+
   .topnav {
     position: absolute;
     width: 100vw;
@@ -1053,14 +1044,14 @@ padding-left:10vw !important;
 .textAboveSearch
 {
   background-size: cover;
-  margin-top: 14vh;
-  font-family: bebas-neue-by-fontfabric, sans-serif;
+  margin-top: 70px;
+  
   font-weight: 400;
   font-style: normal;
-  font-size: 13vw;
+  font-size: 40px;
   color: #EAE3D1;
   text-align: center;
-  margin-bottom: .1vh;
+  margin-bottom: 0px;
 }
 
 /*Input for search bar styling*/
@@ -1068,17 +1059,17 @@ padding-left:10vw !important;
   text-align: left;
   align-content: center;
   font-family: bebas-neue-by-fontfabric, sans-serif;
-  width: 78%; /* Full-width */
-  height: 4vh;
-  font-size: 5vw; /* Increase font-size */
-  padding: .833vw qvw .833vw .833vw;/* Add some padding */
-  border: .069vw solid #ddd; /* Add a grey border */
-  border-radius: 2.5vw;
+  width: 250px; /* Full-width */
+  height: 25px;
+  font-size: 16px; /* Increase font-size */
+  padding:  5px;
+  
+  border-radius: 10px;
 }
 
 /*Cards*/
 .card {
-  border-radius: 2.5vw;
+  border-radius: 10px;
   box-shadow: 0 0.278vw 0.556vw 0 rgba(0, 0, 0, 0.2);
   width: 50%;
   height: 10%;
@@ -1100,14 +1091,7 @@ padding-left:10vw !important;
   flex-flow: wrap;
 }
 
-.name {
-  margin-bottom:-1.389vw;
-  margin-left: 2.431vw;
-  margin-right: 2.431vw;
-  text-align: left;
-  color: #5F2D38;
-  font-size: 7vw;
-}
+
 
 /*User email address*/
 .email {
@@ -1180,10 +1164,10 @@ ul{
 {
   width: 50px;
   height: 35px;
-  padding: .25vw;
-  border-radius: 1vw;
-  font-size: 15px;
-  margin-left: 0vw;
+  padding: 5px;
+  border-radius: 10px;
+  font-size: 18px;
+  
   margin-top: 5px;
   margin-bottom: 5px;
   color: #EAE3D1;
@@ -1216,6 +1200,7 @@ ul{
 
 /*change info modal*/
 .editModal {
+  width: 10px;
   margin-left: 0vw;
 }
 
@@ -1242,11 +1227,12 @@ ul{
 
 /*Input boxes for sign up page*/
 .inputBox2{
+  border-radius: 0px !important;
   margin-left: 0 !important;
-  margin-top: 15px !important;
+  margin-top: 10px !important;
   margin-bottom: 2vh;
   width: 200px !important;
-  height: 5vh;
+  height:40px !important;
 }
 
 /*END OF MEDIA */
@@ -1254,19 +1240,20 @@ ul{
 /*Button inside modal*/
 .filterBtn button
 {
-  width: 40px;
-  margin-right: 5px;
-  padding: .25vw;
-  border-radius: .5vw;
-  font-size: 12px;
+  margin-top: 5px;
+  width: auto;
+  
+  padding: 5px;
+  border-radius: 10px;
+  font-size: 18px;
   color: #5F2D38;
   font-family: bebas-neue-by-fontfabric, sans-serif;
   background-color: #EAE3D1;
 }
 
 .tooltip .tooltiptext {
- 
-  font-size: 12px;
+  border-radius: 10px;
+  font-size: 15px;
    
  }
 
@@ -1278,20 +1265,7 @@ ul{
   background-color: #5F2D38;
 }
 
-/*Input for search bar styling*/
-#btnContainer {
-  display: flex; /* or inline-flex */
-  margin-top: 5px;
-  margin-bottom: 5px;
-  margin-left: 20px;
-  text-align: left;
-  align-content: center;
-  font-family: bebas-neue-by-fontfabric, sans-serif;
-  width: 200px; /* Full-width */
-  font-size: 2.22vw; /* Increase font-size */
-  padding-top:  1.5vw; /* Add some padding */
-  border-radius: 0.694vw;
-}
+
 
 .informationWrap {
   margin-left: 20px;

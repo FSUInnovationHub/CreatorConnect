@@ -29,10 +29,10 @@ class UsersArray extends React.Component {
       this.state.data.map((user, i) => {
         return(
         <div className="card firstUsers" id={"searchUsers" + i} key={i}>
-              <h1 className="name">{user.name}</h1>
-              <p className="email">{user.email}</p>
-              <p className="skillsHead">skills </p>
-              <ul className="skillsArr">
+              <h1>{user.name}</h1>
+              <p >{user.email}</p>
+              <p >skills </p>
+              <ul >
               {
                 user.skills.map((skill, j) => {
                   return(<li key={j}><p>{skill}</p></li>)

@@ -3,6 +3,9 @@ import UsersArray from './UsersArray';
 import './CreatorConnect.css';
 import { Redirect } from 'react-router-dom';
 import Modal from 'react-modal';
+import NavigationBar from './NavigationBar'
+
+
 
 
 /*This is the Home component that will hold the logo and the search bar*/
@@ -300,8 +303,10 @@ class Home extends React.Component {
   render() {
     return this.state.data === 0 ?
     (
-      <div className="bigWrapper"> {/* DO NOT REMOVE THIS DIV COMPONENT*/}
-      <div class="topnav">
+      
+      <div > {/* DO NOT REMOVE THIS DIV COMPONENT*/}
+      <NavigationBar></NavigationBar>
+     {/* <div class="topnav">
         <form className="formWrap" action='http://localhost:5000/logout' method = 'POST' >
           <button className = "logout" type="submit">Logout</button>
         </form>
@@ -315,35 +320,10 @@ class Home extends React.Component {
           <div className="modalBtn">
             <button onClick={this.closeModal}>close</button>
           </div>
-          <h1 className="modalLogo"><span style={STYLE.SPAN}>C</span>reator<span style={STYLE.SPAN}>C</span>onnect<span style={STYLE.BETA}>BETA</span></h1>
-          <div className="modalText">
-            <p>
-              <span style={STYLE.SLI}>C</span><span style={STYLE.EMPH}>reator</span><span style={STYLE.SLI}>C</span><span style={STYLE.EMPH}>onnect</span>’s primary goal is to bridge the gap between skilled students and those who need assistance with developing their independent projects! <br></br>
-              <span style={STYLE.SLI}>R</span>ally with us here at The Innovation Hub as we encourage the expression of creativity and critical thinking! <br></br>
-              <span style={STYLE.SLI}>E</span><span style={STYLE.EMPH}>mpathize, Ideate, and Build</span> no matter what field you're in!<br></br>
-              <span style={STYLE.SLI}>A</span>dvance your skillset and expertise with our network of other Creators!<br></br>
-              <span style={STYLE.SLI}>T</span>ogether we'll network like never before!<br></br>
-              <span style={STYLE.SLI}>E</span>nroll in <span style={STYLE.EMPH}>C</span>reator<span style={STYLE.EMPH}>C</span>onnect today!
-            </p>
-          </div>
+          
         </Modal>
 
-        <button className="leftNavBar" onClick={this.teamOpenModal}>&nbsp;TEAM </button>
-        <Modal
-          isOpen={this.state.teamModalIsOpen}
-          onAfterOpen={this.teamAfterOpenModal}
-          onRequestClose={this.teamCloseModal}
-          contentLabel="Example Modal">
-          <div className="modalBtn">
-            <button onClick={this.teamCloseModal}>close</button>
-          </div>
-
-          <h1 className="modalLogo"><span style={STYLE.EMPH}>M</span>eet&nbsp;&nbsp;the<span style={STYLE.EMPH}>&nbsp;&nbsp;T</span>eam</h1>
-          <div className="teamBlurbContainer">
-            <img img src="/images/teamImage.png" className="teamPics" alt="team"></img>
-          </div>
-        </Modal>
-
+        <a href="https://github.com/FSUInnovationHub/CreatorConnect" target="_blank" rel="noopener noreferrer"><button className="leftNavBar">Github</button></a>
         <button className = "leftNavBar" onClick={this.editOpenModal} type="submit">edit</button>
           <Modal
           isOpen={this.state.editModalIsOpen}
@@ -362,7 +342,7 @@ class Home extends React.Component {
               {
 
               }
-          }}>delete user</button>
+          }}>delete</button>
           <div className="editModal">
           <div className = "signUpOrIn2">
             <div className = "CreatorConnectLogo">
@@ -378,7 +358,7 @@ class Home extends React.Component {
                   <input required className="inputBox" type="email" name="fsuEmail" placeholder="FSU Email" defaultValue={(this.state.userEmail)} pattern=".+@.+.fsu.edu"  ></input>
 <br></br>
                 
-                  {/*VERIFY PASSWORD INPUT BOX... WILL BE LEFT OUT FOR BETA AND FOCUS GROUP RELEASE*/}
+                  VERIFY PASSWORD INPUT BOX... WILL BE LEFT OUT FOR BETA AND FOCUS GROUP RELEASE
                 
                 <div className="dropdown">
                   <select name="gradYear" class="ui fluid dropdown">
@@ -393,7 +373,7 @@ class Home extends React.Component {
                   </select>
                 </div>
 
-                  {/*FORCE LOWERCASE INPUT GOING FORWARD*/}
+                  FORCE LOWERCASE INPUT GOING FORWARD
                   <div className="dropdown">
                     <select name="firstSkill" class="ui fluid dropdown">
                       <option value={this.state.userSkills[0]}>Skill #1: {this.state.userSkills[0]}</option>
@@ -519,21 +499,22 @@ class Home extends React.Component {
                 </div>
                 </div>
                 </div>
-                </div>
+        </div>
         
           </div>
           </Modal>
 
         
 
-        <a href="https://forms.gle/j19asMDP9VCjtQMDA"><button className="leftNavBar">FEEDBACK</button></a>
-      </div>
-
-        <h2 className="textAboveSearch"><span style={STYLE.SPAN}>C</span>reator<span style={STYLE.SPAN}>C</span>onnect<span style={STYLE.BETA}>BETA</span></h2>
+        <a href="https://forms.gle/j19asMDP9VCjtQMDA" target="_blank" rel="noopener noreferrer"><button className="leftNavBar">FEEDBACK</button></a>
+      </div>*/}
+  <br></br>
+        <h2><span style={STYLE.SPAN}>C</span>reator<span style={STYLE.SPAN}>C</span>onnect<span style={STYLE.BETA}>BETA</span></h2>
         
-        <div class="parent">
+      
           <div class="searchBar"><input id="myInput" type="text" onKeyUp={this.handleSearch} placeholder={"Search through " + this.state.totalUsers + " users and their skills..."} ref="search"></input></div>
-          <div id="btnContainer">
+          
+          <div class="btnDiv">
           <div className="tooltip">
             <div className="filterBtn"><button onClick={() => this.filterBy("ALL")}>ALL</button></div>
             <span class="tooltiptext">CLICK TO SHOW ALL USERS</span>
@@ -550,7 +531,8 @@ class Home extends React.Component {
             <div className="filterBtn"><button onClick={() => this.filterBy("CREATE")}>CREATE</button></div>
             <span class="tooltiptext">CLICK TO FILTER BY: <br></br><br></br>DIGITAL PHOTOGRAPHY<br></br>VIDEO PRODUCTION<br></br>ENTREPRENEURSHIP<br></br>SOCIAL ENTREPRENEURSHIP <br></br>SOCIAL MEDIA MARKETING</span>
           </div>
-
+         
+       
           <div className="tooltip">
             <div className="filterBtn"><button onClick={() => this.filterBy("DEVELOP")}>DEVELOP</button></div>
             <span class="tooltiptext">CLICK TO FILTER BY: <br></br><br></br>BRAND DEVELOPMENT<br></br>COMPUTER PROGRAMMING<br></br>APP DEVELOPMENT<br></br>WEB DEVELOPMENT </span>
@@ -561,9 +543,9 @@ class Home extends React.Component {
             <span class="tooltiptext">CLICK TO FILTER BY: <br></br><br></br>ELECTRICAL CIRCUITS<br></br>LASER CUTTING<br></br>3D PRINTING  </span>
           </div>
           
-          </div>
-          
+       
         </div>
+        <br></br>
         <div class="cards-container" id = "users">
       <UsersArray></UsersArray>
       </div>

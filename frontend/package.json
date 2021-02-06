@@ -14,6 +14,8 @@
     "mdbreact": "^4.25.1",
     "multiselect-dropdown-react": "^1.0.5",
     "react": "^16.12.0",
+    "react-bootstrap": "^1.4.3",
+    "react-burger-menu": "^3.0.3",
     "react-button-slider": "^1.2.0",
     "react-dom": "^16.12.0",
     "react-modal": "^3.11.1",

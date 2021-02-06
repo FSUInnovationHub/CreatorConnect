@@ -1,5 +1,4 @@
-import connect
-import sendgridKey
+import secretKeys
 import sys
 import json
 from os import environ
@@ -53,7 +52,7 @@ def getResponseData(code):
 
 
 def mailTo(send_to, urlToken):
-    sg = sendgrid.SendGridAPIClient(api_key= sendgridKey.API_KEY)
+    sg = sendgrid.SendGridAPIClient(api_key= secretKeys.API_KEY)
     from_email = Email("bismarka2010@gmail.com")
     to_email = To(send_to)
     subject = "Account activation"
@@ -84,7 +83,7 @@ def defualtTemplate(token):
       return content
 
 
-uri = connect.CONNECTION_STRING
+uri = secretKeys.CONNECTION_STRING
 client = MongoClient(uri)
 
 # Init Flask App
