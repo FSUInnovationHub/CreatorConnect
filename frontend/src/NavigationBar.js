@@ -44,12 +44,15 @@ class NavigationBar extends React.Component {
   
       
       <Navbar bg="light" expand="lg">
-  <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+  <Navbar.Brand href="#home">CreatorConnect</Navbar.Brand>
   <Navbar.Toggle aria-controls="basic-navbar-nav" />
   <Navbar.Collapse id="basic-navbar-nav">
     <Nav className="mr-auto">
       <Nav.Link href="#home">Home</Nav.Link>
-      <Nav.Link href="#link">Link</Nav.Link>
+      <Nav.Link href="#link">Projects</Nav.Link>
+      <Nav.Link href="#link">Edit Account</Nav.Link>
+      <Nav.Link href="https://docs.google.com/forms/d/e/1FAIpQLSfMOPEx9jRyK6V4fIn_O-uS4YphSi8HBa50LRRKVQhD6niNhg/viewform" target="_blank">Feedback</Nav.Link>
+      <Nav.Link href="http://localhost:5000/logout" style={{float: 'right'}}>Log Out</Nav.Link>
       
     </Nav>
    

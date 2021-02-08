@@ -275,7 +275,7 @@ def login():
         return "5"
 
 #endponint to log user out using session.pop
-@app.route('/logout', methods=['POST'])
+@app.route('/logout', methods=['GET'])
 def logout():
   session.pop('username')
   return redirect("http://localhost:3000/")

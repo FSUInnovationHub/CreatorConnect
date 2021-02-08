@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import Select from 'react-select'
+import Creatable from 'react-select/creatable'
 import './CreatorConnect.css';
 //*This is the Login Component that will prompt users to either sign up or login to CreatorConnect*/
 
@@ -13,6 +15,34 @@ const STYLE = {
     fontSize: ".25em"
   }
 }
+const skillsOptions = [
+  { value: 'App Development', label: 'App Development' },
+  { value: 'Electrical Circuits', label: 'Electrical Circuits' },
+  { value: 'Laser Cutting', label: 'Laser Cutting' },
+  { value: 'Computer Programming', label: 'Computer Programming' },
+  { value: '3D Design', label: '3D Design' },
+  { value: 'Brand Development', label: 'Brand Development' },
+  { value: 'Design Thinking', label: 'Design Thinking' },
+  { value: 'Digital Fabrication/3D Printing', label: 'Digital Fabrication/3D Printing' },
+  { value: 'Social Entrepreneurship', label: 'Social Entrepreneurship' },
+  { value: 'Entrepreneurship', label: 'Entrepreneurship' },
+  { value: 'Game/VR Design', label: 'Game/VR Design' },
+  { value: 'Graphic Design', label: 'Graphic Design' },
+  { value: 'Digital Photography', label: 'Digital Photography' },
+  { value: 'User Experience (UX) Design', label: 'User Experience (UX) Design' },
+  { value: 'Social Media Marketing', label: 'Social Media Marketing' },
+  { value: 'Video Production', label: 'Video Production' },
+  { value: 'Web Design', label: 'Web Design' },
+  { value: 'Web Development', label: 'Web Development' },
+]
+
+const gradOptions = [
+  {value: '2021', label: '2021'},
+  {value: '2022', label: '2022'},
+  {value: '2023', label: '2023'},
+  {value: '2024', label: '2024'},
+
+]
 
 /*This function will be used to handle the form*/
 export default function MultipleSelect() {
@@ -23,8 +53,9 @@ export default function MultipleSelect() {
   const [registration, hideRegistration] = useState(boolArray[0]);
   const [login, setLogin] = useState(boolArray[1]);
   const [button, setButton] = useState(existingUser);
-  
   const [isLoggedOut, checkLogin] = useState(-1)//useState(boolArray[1]);
+  const [skills, updateSkills] = useState("")
+
   const axios = require('axios');
   const axiosWithCookies = axios.create({
     withCredentials: true
@@ -34,7 +65,7 @@ export default function MultipleSelect() {
   function triggerRegistration() {hideRegistration(!registration)}
   function triggerLogin() {setLogin(!login)}
   function triggerButton() {if(button === existingUser){setButton(newUser)}else{setButton(existingUser)}}
-
+  
 
 
   window.onload = function () {
@@ -84,140 +115,19 @@ export default function MultipleSelect() {
                   <input required className="inputBox" type="password" name="password" placeholder="Password" ></input>
                 
                   {/*VERIFY PASSWORD INPUT BOX... WILL BE LEFT OUT FOR BETA AND FOCUS GROUP RELEASE*/}
+                  
+                <div className="dropdown">
+                  <Select 
+                    isMulti options={skillsOptions} 
+                    placeholder="Select Skills..."
+                    onChange={onChange()} />
+                  </div>
+
+                <div className="dropdown"><Select options={gradOptions} isSearchable={false} placeholder="Graduation Year" /></div>
+
                 
-                <div className="dropdown">
-                  <select required name="gradYear" class="ui fluid dropdown">
-                      <option value="">Graduation Year</option>
-                      <option value="2020">2020</option>
-                      <option value="2021">2021</option>
-                      <option value="2022">2022</option>
-                      <option value="2023">2023</option>
-                      <option value="2024">2024</option>
-                      <option value="2025">2025</option>
-                      <option value="2026">2026</option>
-                  </select>
-                </div>
-
                   {/*FORCE LOWERCASE INPUT GOING FORWARD*/}
-                  <div className="dropdown">
-                    <select required name="firstSkill" class="ui fluid dropdown">
-                      <option value="">Skill #1 (REQUIRED)</option>
-                      <option value="App Development">App Development</option>
-                      <option value="Electrical Circuits">Electrical Circuits</option>
-                      <option value="Laser Cutting">Laser Cutting</option>
-                      <option value="Computer Programming">Computer Programming</option>
-                      <option value="3D Design">3D Design</option>
-                      <option value="Brand Development">Brand Development</option>
-                      <option value="Design Thinking">Design Thinking</option>
-                      <option value="3D Printing">3D Printing</option>
-                      <option value="Social Entrepreneurship">Social Entrepreneurship</option>
-                      <option value="Entrepreneurship">Entrepreneurship</option>
-                      <option value="Game/VR Design">Game/VR Design</option>
-                      <option value="Graphic Design">Graphic Design</option>
-                      <option value="Digital Photography">Digital Photography</option>
-                      <option value="User Experience (UX) Design">User Experience (UX) Design</option>
-                      <option value="Social Media Marketing">Social Media Marketing</option>
-                      <option value="Video Production">Video Production</option>
-                      <option value="Web Design">Web Design</option>
-                      <option value="Web Development">Web Development</option>
-                    </select>
-                </div>
-
-                <div className="dropdown">
-                    <select name="secondSkill" class="ui fluid dropdown">
-                      <option value="">Skill #2</option>
-                      <option value="App Development">App Development</option>
-                      <option value="Electrical Circuits">Electrical Circuits</option>
-                      <option value="Laser Cutting">Laser Cutting</option>
-                      <option value="Computer Programming">Computer Programming</option>
-                      <option value="3D Design">3D Design</option>
-                      <option value="Brand Development">Brand Development</option>
-                      <option value="Design Thinking">Design Thinking</option>
-                      <option value="Digital Fabrication/3D Printing">Digital Fabrication/3D Printing</option>
-                      <option value="Social Entrepreneurship">Social Entrepreneurship</option>
-                      <option value="Entrepreneurship">Entrepreneurship</option>
-                      <option value="Game/VR Design">Game/VR Design</option>
-                      <option value="Graphic Design">Graphic Design</option>
-                      <option value="Digital Photography">Digital Photography</option>
-                      <option value="User Experience (UX) Design">User Experience (UX) Design</option>
-                      <option value="Social Media Marketing">Social Media Marketing</option>
-                      <option value="Video Production">Video Production</option>
-                      <option value="Web Design">Web Design</option>
-                      <option value="Web Development">Web Development</option>
-                    </select>
-                </div>
-
-                <div className="dropdown">
-                    <select name="thirdSkill" class="ui fluid dropdown">
-                      <option value="">Skill #3</option>
-                      <option value="App Development">App Development</option>
-                      <option value="Electrical Circuits">Electrical Circuits</option>
-                      <option value="Laser Cutting">Laser Cutting</option>
-                      <option value="Computer Programming">Computer Programming</option>
-                      <option value="3D Design">3D Design</option>
-                      <option value="Brand Development">Brand Development</option>
-                      <option value="Design Thinking">Design Thinking</option>
-                      <option value="Digital Fabrication/3D Printing">Digital Fabrication/3D Printing</option>
-                      <option value="Social Entrepreneurship">Social Entrepreneurship</option>
-                      <option value="Entrepreneurship">Entrepreneurship</option>
-                      <option value="Game/VR Design">Game/VR Design</option>
-                      <option value="Graphic Design">Graphic Design</option>
-                      <option value="Digital Photography">Digital Photography</option>
-                      <option value="User Experience (UX) Design">User Experience (UX) Design</option>
-                      <option value="Social Media Marketing">Social Media Marketing</option>
-                      <option value="Video Production">Video Production</option>
-                      <option value="Web Design">Web Design</option>
-                      <option value="Web Development">Web Development</option>
-                    </select>
-                </div>
-
-                <div className="dropdown">
-                    <select name="fourthSkill" class="ui fluid dropdown">
-                      <option value="">Skill #4</option>
-                      <option value="App Development">App Development</option>
-                      <option value="Electrical Circuits">Electrical Circuits</option>
-                      <option value="Laser Cutting">Laser Cutting</option>
-                      <option value="Computer Programming">Computer Programming</option>
-                      <option value="3D Design">3D Design</option>
-                      <option value="Brand Development">Brand Development</option>
-                      <option value="Design Thinking">Design Thinking</option>
-                      <option value="Digital Fabrication/3D Printing">Digital Fabrication/3D Printing</option>
-                      <option value="Social Entrepreneurship">Social Entrepreneurship</option>
-                      <option value="Entrepreneurship">Entrepreneurship</option>
-                      <option value="Game/VR Design">Game/VR Design</option>
-                      <option value="Graphic Design">Graphic Design</option>
-                      <option value="Digital Photography">Digital Photography</option>
-                      <option value="User Experience (UX) Design">User Experience (UX) Design</option>
-                      <option value="Social Media Marketing">Social Media Marketing</option>
-                      <option value="Video Production">Video Production</option>
-                      <option value="Web Design">Web Design</option>
-                      <option value="Web Development">Web Development</option>
-                    </select>
-                </div>
-
-                <div className="dropdown">
-                    <select name="fifthSkill" class="ui fluid dropdown">
-                      <option value="">Skill #5</option>
-                      <option value="App Development">App Development</option>
-                      <option value="Electrical Circuits">Electrical Circuits</option>
-                      <option value="Laser Cutting">Laser Cutting</option>
-                      <option value="Computer Programming">Computer Programming</option>
-                      <option value="3D Design">3D Design</option>
-                      <option value="Brand Development">Brand Development</option>
-                      <option value="Design Thinking">Design Thinking</option>
-                      <option value="Digital Fabrication/3D Printing">Digital Fabrication/3D Printing</option>
-                      <option value="Social Entrepreneurship">Social Entrepreneurship</option>
-                      <option value="Entrepreneurship">Entrepreneurship</option>
-                      <option value="Game/VR Design">Game/VR Design</option>
-                      <option value="Graphic Design">Graphic Design</option>
-                      <option value="Digital Photography">Digital Photography</option>
-                      <option value="User Experience (UX) Design">User Experience (UX) Design</option>
-                      <option value="Social Media Marketing">Social Media Marketing</option>
-                      <option value="Video Production">Video Production</option>
-                      <option value="Web Design">Web Design</option>
-                      <option value="Web Development">Web Development</option>
-                    </select>
-                </div>
+               
                 <button className="inputBox" type="submit">Submit!</button>
                 </form>}
 
