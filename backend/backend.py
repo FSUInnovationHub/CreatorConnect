@@ -165,7 +165,8 @@ def createNewUser():
     rawPassword = document['password']
     rawPassword.encode('utf-8')
     hashedPassword = bcrypt.hashpw(rawPassword.encode('utf8'), bcrypt.gensalt())
-    skillsArray = [document['firstSkill'], document['secondSkill'], document['thirdSkill'], document['fourthSkill'], document['fifthSkill']]
+
+    skillsArray = document['skills'].split(',')
 
     #based on the response send through, booleans explain the routes
     if user is None:
@@ -181,7 +182,7 @@ def createNewUser():
                                   'hashedPassword': hashedPassword, 
                                   'token': urlToken,
                                   'status' :0,
-                                  'gradYear': document['gradYear'], 
+                                  'gradYear': '2020',#document['gradYear'],  test
                                   'skills': skillsArray})
         user = mongo.db.users.find_one({'email': emailEntered})
         mailTo(document['fsuEmail'], urlToken)

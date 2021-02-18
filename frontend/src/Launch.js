@@ -54,7 +54,7 @@ export default function MultipleSelect() {
   const [login, setLogin] = useState(boolArray[1]);
   const [button, setButton] = useState(existingUser);
   const [isLoggedOut, checkLogin] = useState(-1)//useState(boolArray[1]);
-  const [skills, updateSkills] = useState("")
+  var [skills, updateSkills] = useState('')
 
   const axios = require('axios');
   const axiosWithCookies = axios.create({
@@ -65,8 +65,23 @@ export default function MultipleSelect() {
   function triggerRegistration() {hideRegistration(!registration)}
   function triggerLogin() {setLogin(!login)}
   function triggerButton() {if(button === existingUser){setButton(newUser)}else{setButton(existingUser)}}
-  
-
+  function checkSkills(e) {
+    if(e.length > 5)
+    {
+      e.pop(); 
+      alert("You can only have five skills. Please delete one before adding another.")
+    }
+    skills = e
+    //console.log(e)
+    //console.log(skills)
+    var tempSkills = []
+    for(var i = 0; i < skills.length; i++)
+    {
+      tempSkills.push(e[i]['label'])
+    }
+    updateSkills(tempSkills)
+    
+  }
 
   window.onload = function () {
     axiosWithCookies.get(`http://localhost:5000/login`)
@@ -109,7 +124,7 @@ export default function MultipleSelect() {
                   <input required className="inputBox" type="text" name="firstName" placeholder="First Name" ></input>
                   <br></br>
                   <input required className="inputBox" type="text" name="lastName" placeholder="Last Name" ></input>
-                    <br></br> 
+                  <br></br> 
                   <input required className="inputBox" type="email" name="fsuEmail" placeholder="FSU E-mail (lowercase)" pattern=".+@.+.fsu.edu"></input>
                   <br></br>
                   <input required className="inputBox" type="password" name="password" placeholder="Password" ></input>
@@ -120,8 +135,11 @@ export default function MultipleSelect() {
                   <Select 
                     isMulti options={skillsOptions} 
                     placeholder="Select Skills..."
-                    onChange={onChange()} />
+                    onChange={e => checkSkills(e)} />
                   </div>
+                  <input className="inputBox" type="hidden" name="skills" value={skills} ></input>
+                  <br></br>
+
 
                 <div className="dropdown"><Select options={gradOptions} isSearchable={false} placeholder="Graduation Year" /></div>
 
@@ -133,7 +151,7 @@ export default function MultipleSelect() {
 
                 {/*second form, the existing user form*/}
                 {login && <form action = 'http://localhost:5000/login' method = 'POST'>
-                    <input required className="inputBox" type="text" name="fsuEmail" placeholder="FSU E-mail"></input>
+                  <input required className="inputBox" type="text" name="fsuEmail" placeholder="FSU E-mail"></input>
                   <input required className="inputBox" type="password" name="password" placeholder="Password"></input>
                   <button className="inputBox" type="submit">Log In</button>
                 </form>} 
